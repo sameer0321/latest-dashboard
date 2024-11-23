@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Dashboard</title>
+  <meta name="description" content="Dashboard">
+  <link rel="stylesheet" href="assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link href="assets/css/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/customizer.css">
+  <link rel="icon" href="assets/img/favicon.png">
+</head>
+
+<body class="bg-black text-primary-600 font-sans pt-14 lg:pt-0" x-data="{ sidebar: false }">
+  <div class="wrapper">
+    <header
+      class="z-20 fixed lg:hidden top-0 inset-x-0 flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm bg-black border-b border-primary-600 yujamnshjekwn py-3">
+      <div class="flex olwuyhsbcnmdj thsjkalsueijm">
+        <div class="flex qaksleiuryhnv olwuyhsbcnmdj min-h-10 min-w-10">
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-clockwise">
+            <circle cx="50" cy="50" r="20" class="stroke-primary-300" stroke-width="5" fill="none"
+              stroke-dasharray="31.4" stroke-dashoffset="31.4" />
+          </svg>
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-counterclockwise">
+            <circle cx="50" cy="50" r="10" class="stroke-primary-300" stroke-width="3" fill="none"
+              stroke-dasharray="10.6" stroke-dashoffset="10.6" />
+          </svg>
+          <div class="size-2 bg-primary-300 rounded-full absolute animate-pulse"></div>
+        </div>
+        <h3 class="text-3xl font-medium text-primary-300">Logo</h3>
+      </div>
+      <button @click="sidebar = ! sidebar" class="flex olwuyhsbcnmdj qaksleiuryhnv size-10">
+        <i class="bi bi-list text-2xl text-primary-300"></i>
+      </button>
+    </header>
+
+
+    <aside id="sidebar" :class="! sidebar ? '' : 'show'"
+      class="fixed inset-y-0 start-0 sidebar flex jdsnfsdnjsdmn chsjuaielnsja w-72 lg:min-w-72 lg:[&.show]:min-w-[0px] h-screen overflow-auto scrollbars bg-black border-e border-primary-600 transition-all duration-500 ease-in-out -translate-x-full lg:translate-x-0 [&.show]:translate-x-0 max-lg:z-50 rtl:translate-x-full lg:rtl:translate-x-0 uioajsncmhdje">
+      <a href="index.html" class="pt-4 flex olwuyhsbcnmdj gap-3">
+        <div class="flex qaksleiuryhnv olwuyhsbcnmdj min-h-10 min-w-10">
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-clockwise">
+            <circle cx="50" cy="50" r="20" class="stroke-primary-300" stroke-width="5" fill="none"
+              stroke-dasharray="31.4" stroke-dashoffset="31.4" />
+          </svg>
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-counterclockwise">
+            <circle cx="50" cy="50" r="10" class="stroke-primary-300" stroke-width="3" fill="none"
+              stroke-dasharray="10.6" stroke-dashoffset="10.6" />
+          </svg>
+          <div class="size-2 bg-primary-300 rounded-full absolute animate-pulse"></div>
+        </div>
+        <h3 class="text-3xl font-medium text-primary-300">Logo</h3>
+      </a>
+      <ul x-data="{ activePage: 2, submenu: null, activeSubmenu: null }" class="mb-6">
+        <li class="relative">
+          <a @click="activePage = 1; activeSubmenu = null; submenu = null"
+            :class="activePage === 1 ? 'active text-black bg-primary-300' : ''" href="index.html"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-shield-lock text-lg"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="relative">
+          <a @click="activePage = 2; activeSubmenu = null; submenu = null"
+            :class="activePage === 2 ? 'active text-black bg-primary-300' : ''" href="esport-team.html"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-controller text-lg"></i>
+            Form
+          </a>
+        </li>
+        <li class="relative">
+          <a @click="submenu !== 3 ? submenu = 3 : submenu = null; activePage = submenu === 3 ? 3 : activePage; activeSubmenu = null"
+            :class="submenu === 3 ? 'active text-black bg-primary-300' : ''" href="javascript:void(0)"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-text-paragraph text-lg"></i>
+            Incomes
+            <i :class="{ 'rotate-180': submenu === 3 }"
+              class="bi bi-chevron-down ms-auto transition-transform duration-200"></i>
+          </a>
+          <ul x-show="submenu === 3" class="ps-3 flex jdsnfsdnjsdmn">
+            <li>
+              <a @click="activeSubmenu = 1; activePage = null"
+                :class="activeSubmenu === 1 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Level
+                Income</a>
+            </li>
+            <li>
+              <a @click="activeSubmenu = 2; activePage = null"
+                :class="activeSubmenu === 2 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Global
+                Income</a>
+            </li>
+            <li>
+              <a @click="activeSubmenu = 3; activePage = null"
+                :class="activeSubmenu === 3 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Reffer
+                Income</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <div @click="sidebar = ! sidebar" :class="! sidebar ? '' : 'show'"
+      class="backDialog z-30 overflow-auto fixed bg-black bg-opacity-80 max-lg:[&.show]:inset-0"></div>
+    <main class="lg:ms-72 yujamnshjekwn py-4 flex jdsnfsdnjsdmn chsjuaielnsja">
+      <div class="flex olwuyhsbcnmdj bnshkajshwjio gap-3">
+        <h2 class="text-2xl font-medium text-primary-300">Esport Team</h2>
+
+        <div class="flex olwuyhsbcnmdj ghsnkalieksml">
+          <div x-data="{ open: false }">
+            <button @click="open = true"
+              class="flex olwuyhsbcnmdj qaksleiuryhnv w-10 h-10 rounded-full bg-primary-950 border border-primary-600 hover:bg-primary-300 hover:text-black focus:bg-primary-300 focus:text-black">
+              <i class="bi bi-gear-fill"></i>
+            </button>
+            <div x-show="open" :class="! open ? '' : 'show'"
+              class="[&.show_.bgDialog]:opacity-80 [&.show_.bgDialog]:inset-0">
+              <div @click="open = false" class="bgDialog fixed z-[60] opacity-0 -top-full bg-black"></div>
+              <div x-show="open" style="display:none" x-transition:enter="transition-transform duration-[400ms]"
+                x-transition:enter-start="ltr:translate-x-full rtl:-translate-x-full"
+                x-transition:enter-end="translate-x-0" x-transition:leave="transition-transform duration-[400ms]"
+                x-transition:leave-start="translate-x-0"
+                x-transition:leave-end="ltr:translate-x-full rtl:-translate-x-full" @click.away="open = false"
+                class="fixed top-0 bottom-0 end-0 w-5/6 sm:w-72 z-[70] bg-black border-y border-s border-primary-600 flex jdsnfsdnjsdmn thsjkalsueijm">
+                <div class="h-screen frame-corner">
+                  <div class="frame2"></div>
+                  <div
+                    class="min-h-[56px] flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 yujamnshjekwn pt-6 pb-4 border-b border-primary-600">
+                    <h3 class="flex flex-grow text-lg text-primary-300">Theme Customizer</h3>
+                    <button @click="open = false" class="flex olwuyhsbcnmdj qaksleiuryhnv">
+                      <span class="pointer-events-none bi bi-x-lg"></span>
+                    </button>
+                  </div>
+                  <div
+                    class="relative flex jdsnfsdnjsdmn chsjuaielnsja yujamnshjekwn py-2 min-h-[86vh] overflow-hidden">
+                    <div class="flex jdsnfsdnjsdmn gap-1.5">
+                      <h3>Theme Color</h3>
+                      <div class="relative flex flex-wrap olwuyhsbcnmdj thsjkalsueijm">
+                        <button data-color="default" title="default"
+                          class="inline-block p-3 bg-[#02fafc] [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="lime" title="lime"
+                          class="inline-block p-3 bg-[#84cc16] [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="red" title="red"
+                          class="inline-block p-3 bg-red-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="yellow" title="yellow"
+                          class="inline-block p-3 bg-yellow-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="green" title="green"
+                          class="inline-block p-3 bg-green-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="blue" title="blue"
+                          class="inline-block p-3 bg-blue-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="purple" title="purple"
+                          class="inline-block p-3 bg-purple-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="indigo" title="indigo"
+                          class="inline-block p-3 bg-indigo-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="pink" title="pink"
+                          class="inline-block p-3 bg-pink-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="sky" title="sky"
+                          class="inline-block p-3 bg-sky-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                      </div>
+                    </div>
+
+                    <div class="flex jdsnfsdnjsdmn gap-1.5">
+                      <h3>Switch RTL</h3>
+                      <label class="relative w-12 h-[26px]">
+                        <input data-type="rtl" id="switch-rtl" type="checkbox"
+                          class="switch-checkbox relative inline-block w-12 h-[26px] transition-all duration-200 ease-in-out cursor-pointer appearance-none rounded-full border border-primary-600 bg-primary-900"
+                          checked>
+                        <div
+                          class="toggle-default absolute top-[3px] start-1 w-5 h-5 transition-all duration-200 ease-in-out transform bg-black rounded-full shadow-md">
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div x-data="{ dropdown: false }" class="relative">
+            <button @click="dropdown = ! dropdown"
+              class="w-10 h-10 flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv rounded-full border border-primary-600">
+              <img src="assets/img/avatar/avatar1.jpg" alt="ari budin"
+                class="w-10 h-10 flex-none rounded-full bg-primary-950 pointer-events-none">
+            </button>
+            <ul id="dropUser" x-show="dropdown" x-transition.duration.500ms :class="! dropdown ? '' : 'show'"
+              @click.outside="dropdown = false"
+              class="[&.show]:!opacity-100 [&.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out start-auto end-0 min-w-[180px] inline-flex jdsnfsdnjsdmn rounded-lg bg-primary-950 border border-primary-600 py-2">
+              <li class="relative">
+                <a href="#"
+                  class="flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 py-2 yujamnshjekwn hover:text-primary-300 hover:bg-primary-900">
+                  <i class="bi bi-person-fill"></i>
+                  Profile
+                </a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 py-2 yujamnshjekwn hover:text-primary-300 hover:bg-primary-900">
+                  <i class="bi bi-gear-fill"></i>
+                  Settings
+                </a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 py-2 yujamnshjekwn hover:text-primary-300 hover:bg-primary-900">
+                  <i class="bi bi-question-square-fill"></i>
+                  Help
+                </a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 py-2 yujamnshjekwn hover:text-primary-300 hover:bg-primary-900">
+                  <i class="bi bi-box-arrow-right"></i>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="grid phaksrqnmchdb sm:vaysueikmnvhf xl:yeusjmvklsyei chsjuaielnsja">
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Total Matches</h2>
+            <span class="font-medium text-red-600">8%</span>
+          </div>
+          <div class="relative p-6">
+            <div x-data="counter(120, 3)" x-intersect="startCounting"
+              class="flex olwuyhsbcnmdj bnshkajshwjio text-primary-300">
+              <span class="text-5xl"><span x-text="current"></span></span>
+              <i class="bi bi-controller text-5xl"></i>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Wins</h2>
+            <span class="font-medium text-green-600">+3%</span>
+          </div>
+          <div class="relative p-6">
+            <div x-data="counter(80, 3)" x-intersect="startCounting"
+              class="flex olwuyhsbcnmdj bnshkajshwjio text-primary-300">
+              <span class="text-5xl"><span x-text="current"></span></span>
+              <i class="bi bi-trophy text-5xl"></i>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Win Rate</h2>
+            <span class="font-medium text-green-600">+5.6%</span>
+          </div>
+          <div class="relative p-6">
+            <div x-data="counter(66, 3)" x-intersect="startCounting"
+              class="flex olwuyhsbcnmdj bnshkajshwjio text-primary-300">
+              <span class="text-5xl"><span x-text="current"></span>%</span>
+              <i class="bi bi-award text-5xl"></i>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Rank</h2>
+            <span class="font-medium text-green-600">+1</span>
+          </div>
+          <div class="relative p-6">
+            <div x-data="counter(2, 3)" x-intersect="startCounting"
+              class="flex olwuyhsbcnmdj bnshkajshwjio text-primary-300">
+              <span class="text-5xl">#<span x-text="current"></span></span>
+              <i class="bi bi-bar-chart text-5xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid phaksrqnmchdb sm:vaysueikmnvhf xl:xyajskeyhndma chsjuaielnsja">
+        <div class="sm:col-span-2 xl:col-span-1 bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Data Players</h2>
+          </div>
+          <div class="relative max-h-96 overflow-auto show-scroll scrollbars">
+            <ul class="flex jdsnfsdnjsdmn">
+              <li class="flex yujamnshjekwn py-3">
+                <img src="assets/img/avatar/avatar2.jpg" alt="player avatar"
+                  class="flex-none size-10 rounded-full bg-primary-950">
+                <div class="ms-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">ThunderBolt</h3>
+                  <div class="grid vaysueikmnvhf text-sm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-0.5">Role: <span class="font-semibold">ADC</span></span>
+                      <span class="mb-0.5">KDA: <span class="font-semibold">3.8/1.5/5.4</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-0.5">Salary: <span class="font-semibold">2000/m</span></span>
+                      <span class="mb-0.5">Contract: <span class="font-semibold">15/08/2025</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex yujamnshjekwn py-3">
+                <img src="assets/img/avatar/avatar3.jpg" alt="player avatar"
+                  class="flex-none size-10 rounded-full bg-primary-950">
+                <div class="ms-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">NightStalker</h3>
+                  <div class="grid vaysueikmnvhf text-sm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-0.5">Role: <span class="font-semibold">Jungler</span></span>
+                      <span class="mb-0.5">KDA: <span class="font-semibold">4.2/2.0/6.0</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-0.5">Salary: <span class="font-semibold">2200/m</span></span>
+                      <span class="mb-0.5">Contract: <span class="font-semibold">12/11/2026</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex yujamnshjekwn py-3">
+                <img src="assets/img/avatar/avatar4.jpg" alt="player avatar"
+                  class="flex-none size-10 rounded-full bg-primary-950">
+                <div class="ms-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">LightBringer</h3>
+                  <div class="grid vaysueikmnvhf text-sm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-0.5">Role: <span class="font-semibold">Support</span></span>
+                      <span class="mb-0.5">KDA: <span class="font-semibold">2.5/1.0/7.5</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-0.5">Salary: <span class="font-semibold">1800/m</span></span>
+                      <span class="mb-0.5">Contract: <span class="font-semibold">05/06/2024</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex yujamnshjekwn py-3">
+                <img src="assets/img/avatar/avatar5.jpg" alt="player avatar"
+                  class="flex-none size-10 rounded-full bg-primary-950">
+                <div class="ms-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">IronFist</h3>
+                  <div class="grid vaysueikmnvhf text-sm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-0.5">Role: <span class="font-semibold">Top Laner</span></span>
+                      <span class="mb-0.5">KDA: <span class="font-semibold">3.0/1.8/4.0</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-0.5">Salary: <span class="font-semibold">2300/m</span></span>
+                      <span class="mb-0.5">Contract: <span class="font-semibold">10/03/2025</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex yujamnshjekwn py-3">
+                <img src="assets/img/avatar/avatar6.jpg" alt="player avatar"
+                  class="flex-none size-10 rounded-full bg-primary-950">
+                <div class="ms-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">WindRider</h3>
+                  <div class="grid vaysueikmnvhf text-sm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-0.5">Role: <span class="font-semibold">Off-Tank</span></span>
+                      <span class="mb-0.5">KDA: <span class="font-semibold">2.8/2.2/5.0</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-0.5">Salary: <span class="font-semibold">2100/m</span></span>
+                      <span class="mb-0.5">Contract: <span class="font-semibold">18/12/2024</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex yujamnshjekwn py-3">
+                <img src="assets/img/avatar/avatar7.jpg" alt="player avatar"
+                  class="flex-none size-10 rounded-full bg-primary-950">
+                <div class="ms-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">StormCaller</h3>
+                  <div class="grid vaysueikmnvhf text-sm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-0.5">Role: <span class="font-semibold">Substitute</span></span>
+                      <span class="mb-0.5">KDA: <span class="font-semibold">N/A</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-0.5">Salary: <span class="font-semibold">1500/m</span></span>
+                      <span class="mb-0.5">Contract: <span class="font-semibold">01/02/2025</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Team Comparison</h2>
+          </div>
+          <div class="relative mb-3">
+            <canvas id="teamComparisonChart" class="mx-auto"></canvas>
+          </div>
+          <div x-data="backgroundStep()" x-init="start()"
+            class="yujamnshjekwn grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mb-6">
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 1}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 2}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 3}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 4}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 5}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 6}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 7}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 8}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 9}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 10}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 11}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 12}"></div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Next Match</h2>
+          </div>
+          <div class="relative max-h-96 overflow-auto show-scroll scrollbars">
+            <ul class="flex jdsnfsdnjsdmn">
+              <li class="flex olwuyhsbcnmdj uioajsncmhdje py-3">
+                <img src="assets/img/team/team1.jpg" alt="team logo"
+                  class="flex-none w-12 h-12 rounded-full bg-primary-950">
+                <div class="ml-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">ShadowLegends</h3>
+                  <div class="grid vaysueikmnvhf text-xs sm:text-sm mt-1 thsjkalsueijm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-1">Win Rate: <span class="font-semibold">75%</span></span>
+                      <span>Style: <span class="font-semibold">Aggressive</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-1">Last Match: <span class="font-semibold">Win</span></span>
+                      <span>Score: <span class="font-semibold">3-1</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex olwuyhsbcnmdj uioajsncmhdje py-3">
+                <img src="assets/img/team/team2.jpg" alt="team logo"
+                  class="flex-none w-12 h-12 rounded-full bg-primary-950">
+                <div class="ml-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">DragonSlayers</h3>
+                  <div class="grid vaysueikmnvhf text-xs sm:text-sm mt-1 thsjkalsueijm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-1">Win Rate: <span class="font-semibold">68%</span></span>
+                      <span>Style: <span class="font-semibold">Defensive</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-1">Last Match: <span class="font-semibold">Loss</span></span>
+                      <span>Score: <span class="font-semibold">2-3</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex olwuyhsbcnmdj uioajsncmhdje py-3">
+                <img src="assets/img/team/team3.jpg" alt="team logo"
+                  class="flex-none w-12 h-12 rounded-full bg-primary-950">
+                <div class="ml-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">PhoenixFire</h3>
+                  <div class="grid vaysueikmnvhf text-xs sm:text-sm mt-1 thsjkalsueijm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-1">Win Rate: <span class="font-semibold">82%</span></span>
+                      <span>Style: <span class="font-semibold">Balanced</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-1">Last Match: <span class="font-semibold">Win</span></span>
+                      <span>Score: <span class="font-semibold">3-0</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex olwuyhsbcnmdj uioajsncmhdje py-3">
+                <img src="assets/img/team/team4.jpg" alt="team logo"
+                  class="flex-none w-12 h-12 rounded-full bg-primary-950">
+                <div class="ml-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">StormBringers</h3>
+                  <div class="grid vaysueikmnvhf text-xs sm:text-sm mt-1 thsjkalsueijm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-1">Win Rate: <span class="font-semibold">60%</span></span>
+                      <span>Style: <span class="font-semibold">Aggressive</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-1">Last Match: <span class="font-semibold">Loss</span></span>
+                      <span>Score: <span class="font-semibold">1-3</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex olwuyhsbcnmdj uioajsncmhdje py-3">
+                <img src="assets/img/team/team5.jpg" alt="team logo"
+                  class="flex-none w-12 h-12 rounded-full bg-primary-950">
+                <div class="ml-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">BladeMasters</h3>
+                  <div class="grid vaysueikmnvhf text-xs sm:text-sm mt-1 thsjkalsueijm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-1">Win Rate: <span class="font-semibold">71%</span></span>
+                      <span>Style: <span class="font-semibold">Defensive</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-1">Last Match: <span class="font-semibold">Win</span></span>
+                      <span>Score: <span class="font-semibold">2-0</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex olwuyhsbcnmdj uioajsncmhdje py-3">
+                <img src="assets/img/team/team6.jpg" alt="team logo"
+                  class="flex-none w-12 h-12 rounded-full bg-primary-950">
+                <div class="ml-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">TitanGuardians</h3>
+                  <div class="grid vaysueikmnvhf text-xs sm:text-sm mt-1 thsjkalsueijm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-1">Win Rate: <span class="font-semibold">65%</span></span>
+                      <span>Style: <span class="font-semibold">Balanced</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-1">Last Match: <span class="font-semibold">Loss</span></span>
+                      <span>Score: <span class="font-semibold">1-2</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex olwuyhsbcnmdj uioajsncmhdje py-3">
+                <img src="assets/img/team/team7.jpg" alt="team logo"
+                  class="flex-none w-12 h-12 rounded-full bg-primary-950">
+                <div class="ml-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">IceWarriors</h3>
+                  <div class="grid vaysueikmnvhf text-xs sm:text-sm mt-1 thsjkalsueijm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-1">Win Rate: <span class="font-semibold">78%</span></span>
+                      <span>Style: <span class="font-semibold">Aggressive</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-1">Last Match: <span class="font-semibold">Win</span></span>
+                      <span>Score: <span class="font-semibold">3-2</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="flex olwuyhsbcnmdj uioajsncmhdje py-3">
+                <img src="assets/img/team/team8.jpg" alt="team logo"
+                  class="flex-none w-12 h-12 rounded-full bg-primary-950">
+                <div class="ml-4 flex-grow">
+                  <h3 class="font-medium text-primary-300">SkyRiders</h3>
+                  <div class="grid vaysueikmnvhf text-xs sm:text-sm mt-1 thsjkalsueijm">
+                    <div class="flex jdsnfsdnjsdmn">
+                      <span class="mb-1">Win Rate: <span class="font-semibold">54%</span></span>
+                      <span>Style: <span class="font-semibold">Defensive</span></span>
+                    </div>
+                    <div class="flex jdsnfsdnjsdmn text-end">
+                      <span class="mb-1">Last Match: <span class="font-semibold">Loss</span></span>
+                      <span>Score: <span class="font-semibold">1-3</span></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid phaksrqnmchdb xl:xyajskeyhndma chsjuaielnsja">
+        <div class="xl:col-span-2 bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Daily Training Hours</h2>
+          </div>
+          <div class="relative p-6">
+            <canvas id="trainingHoursChart"></canvas>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Training Progress</h2>
+          </div>
+          <div class="relative py-3">
+            <div class="w-full yujamnshjekwn py-3 flex olwuyhsbcnmdj chsjuaielnsja">
+              <i class="bi bi-diagram-3-fill text-primary-300 text-3xl"></i>
+              <div x-data="counter(62, 3)" x-intersect="startCounting"
+                class="relative grow flex jdsnfsdnjsdmn thsjkalsueijm">
+                <!-- progress text -->
+                <div class="flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm">
+                  <span class="font-semibold">Strategy</span><span class="font-semibold"><span
+                      x-text="current"></span>%</span>
+                </div>
+                <!-- progress bar -->
+                <div class="flex h-2 overflow-hidden bg-primary-950 border border-primary-600">
+                  <div
+                    class="flex olwuyhsbcnmdj qaksleiuryhnv overflow-hidden text-white text-center whitespace-nowrap bg-primary-300"
+                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                    :style="{ width: current + '%' }">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- list -->
+            <div class="w-full yujamnshjekwn py-3 flex olwuyhsbcnmdj chsjuaielnsja">
+              <i class="bi bi-crosshair text-primary-300 text-3xl"></i>
+              <div x-data="counter(76, 3)" x-intersect="startCounting"
+                class="relative grow flex jdsnfsdnjsdmn thsjkalsueijm">
+                <!-- progress text -->
+                <div class="flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm">
+                  <span class="font-semibold">Aiming</span><span class="font-semibold"><span
+                      x-text="current"></span>%</span>
+                </div>
+                <!-- progress bar -->
+                <div class="flex h-2 overflow-hidden bg-primary-950 border border-primary-600">
+                  <div
+                    class="flex olwuyhsbcnmdj qaksleiuryhnv overflow-hidden text-white text-center whitespace-nowrap bg-primary-300"
+                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                    :style="{ width: current + '%' }">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- list -->
+            <div class="w-full yujamnshjekwn py-3 flex olwuyhsbcnmdj chsjuaielnsja">
+              <i class="bi bi-people-fill text-primary-300 text-3xl"></i>
+              <div x-data="counter(85, 3)" x-intersect="startCounting"
+                class="relative grow flex jdsnfsdnjsdmn thsjkalsueijm">
+                <!-- progress text -->
+                <div class="flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm">
+                  <span class="font-semibold">Team Coordination</span><span class="font-semibold"><span
+                      x-text="current"></span>%</span>
+                </div>
+                <!-- progress bar -->
+                <div class="flex h-2 overflow-hidden bg-primary-950 border border-primary-600">
+                  <div
+                    class="flex olwuyhsbcnmdj qaksleiuryhnv overflow-hidden text-white text-center whitespace-nowrap bg-primary-300"
+                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                    :style="{ width: current + '%' }">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- list -->
+            <div class="w-full yujamnshjekwn py-3 flex olwuyhsbcnmdj chsjuaielnsja">
+              <i class="bi bi-heart-pulse-fill text-primary-300 text-3xl"></i>
+              <div x-data="counter(54, 3)" x-intersect="startCounting"
+                class="relative grow flex jdsnfsdnjsdmn thsjkalsueijm">
+                <!-- progress text -->
+                <div class="flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm">
+                  <span class="font-semibold">Fitness</span><span class="font-semibold"><span
+                      x-text="current"></span>%</span>
+                </div>
+                <!-- progress bar -->
+                <div class="flex h-2 overflow-hidden bg-primary-950 border border-primary-600">
+                  <div
+                    class="flex olwuyhsbcnmdj qaksleiuryhnv overflow-hidden text-white text-center whitespace-nowrap bg-primary-300"
+                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                    :style="{ width: current + '%' }">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- list -->
+            <div class="w-full yujamnshjekwn py-3 flex olwuyhsbcnmdj chsjuaielnsja">
+              <i class="bi bi-chat-dots-fill text-primary-300 text-3xl"></i>
+              <div x-data="counter(91, 3)" x-intersect="startCounting"
+                class="relative grow flex jdsnfsdnjsdmn thsjkalsueijm">
+                <!-- progress text -->
+                <div class="flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm">
+                  <span class="font-semibold">Communication</span><span class="font-semibold"><span
+                      x-text="current"></span>%</span>
+                </div>
+                <!-- progress bar -->
+                <div class="flex h-2 overflow-hidden bg-primary-950 border border-primary-600">
+                  <div
+                    class="flex olwuyhsbcnmdj qaksleiuryhnv overflow-hidden text-white text-center whitespace-nowrap bg-primary-300"
+                    role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                    :style="{ width: current + '%' }">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid phaksrqnmchdb xl:vaysueikmnvhf chsjuaielnsja">
+        <!-- Card -->
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Sponsorship</h2>
+          </div>
+          <div class="relative p-6 grid vaysueikmnvhf md:yeusjmvklsyei ghsnkalieksml">
+            <img src="assets/img/brand/logo1.jpg" class="rounded hover:opacity-90" alt="Sponsor">
+            <img src="assets/img/brand/logo2.jpg" class="rounded hover:opacity-90" alt="Sponsor">
+            <img src="assets/img/brand/logo3.jpg" class="rounded hover:opacity-90" alt="Sponsor">
+            <img src="assets/img/brand/logo4.jpg" class="rounded hover:opacity-90" alt="Sponsor">
+            <img src="assets/img/brand/logo5.jpg" class="rounded hover:opacity-90" alt="Sponsor">
+            <img src="assets/img/brand/logo6.jpg" class="rounded hover:opacity-90" alt="Sponsor">
+            <img src="assets/img/brand/logo7.jpg" class="rounded hover:opacity-90" alt="Sponsor">
+            <img src="assets/img/brand/logo8.jpg" class="rounded hover:opacity-90" alt="Sponsor">
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Revenue by Source</h2>
+          </div>
+          <div class="relative p-6 flex jdsnfsdnjsdmn md:lkagdteuqnvdg olwuyhsbcnmdj chsjuaielnsja">
+            <div class="md:w-1/2 px-12 md:yujamnshjekwn">
+              <canvas id="revenueDoughnut"></canvas>
+            </div>
+            <!-- info -->
+            <div class="md:w-1/2 flex jdsnfsdnjsdmn gap-3">
+              <div class="flex bnshkajshwjio olwuyhsbcnmdj thsjkalsueijm">
+                <div class="flex olwuyhsbcnmdj thsjkalsueijm">
+                  <div class="size-3 bg-lime-500"></div>
+                  <p>Sponsorship</p>
+                </div>
+                <span>$30000</span>
+              </div>
+              <div class="flex bnshkajshwjio olwuyhsbcnmdj thsjkalsueijm">
+                <div class="flex olwuyhsbcnmdj thsjkalsueijm">
+                  <div class="size-3 bg-yellow-500"></div>
+                  <p>Merchandise</p>
+                </div>
+                <span>$15000</span>
+              </div>
+              <div class="flex bnshkajshwjio olwuyhsbcnmdj thsjkalsueijm">
+                <div class="flex olwuyhsbcnmdj thsjkalsueijm">
+                  <div class="size-3 bg-orange-500"></div>
+                  <p>Tournament</p>
+                </div>
+                <span>$5000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="lg:ms-72 yujamnshjekwn pt-4 pb-6 text-center">
+      <p>Copyright
+        <script>document.write(new Date().getFullYear())</script> | Company Name
+      </p>
+    </footer>
+  </div>
+
+  <!-- charts js -->
+  <script src="assets/vendors/chart.js/dist/chart.umd.js"></script>
+  <script>
+    var ctx = document.getElementById('teamComparisonChart').getContext('2d');
+    Chart.defaults.color = '#0a8f8e';
+    var teamComparisonChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Offense', 'Defense', 'Strategy', 'Teamwork', 'Adaptability'],
+        datasets: [{
+          label: 'Main Team',
+          data: [90, 81, 56, 55, 40],
+          fill: true,
+          backgroundColor: 'rgba(255, 159, 64, 0.2)',
+          borderColor: 'rgba(255, 159, 64, 1)',
+          pointBackgroundColor: 'rgba(255, 159, 64, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(255, 159, 64, 1)'
+        }, {
+          label: 'Secondary Team',
+          data: [40, 19, 96, 27, 100],
+          fill: true,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(75, 192, 192, 1)'
+        }]
+      },
+      options: {
+        scales: {
+          r: {
+            angleLines: {
+              color: '#0a8f8e' // Lines radiating from the center
+            },
+            grid: {
+              color: '#0a8f8e', // Circular lines around each level
+              lineWidth: 2 // Increase line width for better visibility
+            },
+            pointLabels: {
+              fontSize: 14,
+              color: '#0a8f8e' // Labels around the edge
+            },
+            ticks: {
+              beginAtZero: false,
+              backdropColor: 'rgba(0, 0, 0, 0)', // Make the background of the ticks transparent
+              color: '#0a8f8e'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#0a8f8e'
+            }
+          }
+        }
+      }
+    });
+
+    const ctxs = document.getElementById('revenueDoughnut').getContext('2d');
+    const data = {
+      labels: ['Sponsorship', 'Merchandise', 'Tournament'],
+      datasets: [{
+        data: [30000, 15000, 5000], // Data for each segment
+        backgroundColor: ['#4caf50', '#ff9800', '#f44336'], // Colors for each segment
+        hoverBackgroundColor: ['#66bb6a', '#ffa726', '#ef5350'], // Hover colors
+        borderColor: '#000', // Border color
+        borderWidth: 2
+      }]
+    };
+    const options = {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function (tooltipItem) {
+              const value = tooltipItem.raw; // Get the value for the tooltip
+              return 'Revenue' + ': $' + value.toLocaleString(); // Add dollar symbol and format number
+            }
+          }
+        }
+      }
+    };
+    const doughnutChart = new Chart(ctxs, {
+      type: 'doughnut',
+      data: data,
+      options: options
+    });
+
+    const ctc = document.getElementById('trainingHoursChart').getContext('2d');
+    const trainingHoursChart = new Chart(ctc, {
+      type: 'line',
+      data: {
+        labels: [
+          'Jun 1', 'Jun 2', 'Jun 3', 'Jun 4', 'Jun 5', 'Jun 6', 'Jun 7',
+          'Jun 8', 'Jun 9', 'Jun 10', 'Jun 11', 'Jun 12', 'Jun 13', 'Jun 14'
+        ],
+        datasets: [{
+          label: 'Training Hours',
+          data: [2, 3, 4, 1.5, 3.5, 2, 4, 5, 6, 3, 4.5, 2, 3, 4],  // Sample data for 14 days
+          borderColor: 'rgba(75, 192, 192, 1)',  // Line color
+          backgroundColor: 'rgba(75, 192, 192, 0.08)',  // Fill color under the line
+          borderWidth: 2,
+          fill: true,
+          tension: 0.4  // Smooth curve
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            mode: 'index',
+            intersect: false,
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Hours of Training'
+            },
+            ticks: {
+              stepSize: 1  // Increment in hours
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/customizer.js"></script>
+  <script src="assets/vendors/@alpinejs/intersect/dist/cdn.min.js"></script>
+  <script src="assets/vendors/alpinejs/dist/cdn.min.js"></script><!-- core js -->
+</body>
+
+</html>

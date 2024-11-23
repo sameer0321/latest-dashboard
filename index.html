@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Dashboard</title>
+  <meta name="description" content="Dashboard">
+
+  <link rel="stylesheet" href="assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link href="assets/css/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/customizer.css">
+  <link rel="stylesheet" href="assets/vendors/jsvectormap/dist/css/jsvectormap.css">
+  <link rel="icon" href="assets/img/favicon.png">
+</head>
+
+<body class="bg-black text-primary-600 font-sans pt-14 lg:pt-0" x-data="{ sidebar: false }">
+  <div class="wrapper">
+    <header
+      class="z-20 fixed lg:hidden top-0 inset-x-0 flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm bg-black border-b border-primary-600 yujamnshjekwn py-3">
+      <div class="flex olwuyhsbcnmdj thsjkalsueijm">
+        <div class="flex qaksleiuryhnv olwuyhsbcnmdj min-h-10 min-w-10">
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-clockwise">
+            <circle cx="50" cy="50" r="20" class="stroke-primary-300" stroke-width="5" fill="none"
+              stroke-dasharray="31.4" stroke-dashoffset="31.4" />
+          </svg>
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-counterclockwise">
+            <circle cx="50" cy="50" r="10" class="stroke-primary-300" stroke-width="3" fill="none"
+              stroke-dasharray="10.6" stroke-dashoffset="10.6" />
+          </svg>
+          <div class="size-2 bg-primary-300 rounded-full absolute animate-pulse"></div>
+        </div>
+        <h3 class="text-3xl font-medium text-primary-300">Logo</h3>
+      </div>
+
+      <button @click="sidebar = ! sidebar" class="flex olwuyhsbcnmdj qaksleiuryhnv size-10">
+        <i class="bi bi-list text-2xl text-primary-300"></i>
+      </button>
+    </header>
+
+
+    <aside id="sidebar" :class="! sidebar ? '' : 'show'"
+      class="fixed inset-y-0 start-0 sidebar flex jdsnfsdnjsdmn chsjuaielnsja w-72 lg:min-w-72 lg:[&.show]:min-w-[0px] h-screen overflow-auto scrollbars bg-black border-e border-primary-600 transition-all duration-500 ease-in-out -translate-x-full lg:translate-x-0 [&.show]:translate-x-0 max-lg:z-50 rtl:translate-x-full lg:rtl:translate-x-0 uioajsncmhdje">
+      <a href="index.html" class="pt-4 flex olwuyhsbcnmdj gap-3">
+        <div class="flex qaksleiuryhnv olwuyhsbcnmdj min-h-10 min-w-10">
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-clockwise">
+            <circle cx="50" cy="50" r="20" class="stroke-primary-300" stroke-width="5" fill="none"
+              stroke-dasharray="31.4" stroke-dashoffset="31.4" />
+          </svg>
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-counterclockwise">
+            <circle cx="50" cy="50" r="10" class="stroke-primary-300" stroke-width="3" fill="none"
+              stroke-dasharray="10.6" stroke-dashoffset="10.6" />
+          </svg>
+          <div class="size-2 bg-primary-300 rounded-full absolute animate-pulse"></div>
+        </div>
+        <h3 class="text-3xl font-medium text-primary-300">Logo</h3>
+      </a>
+      <ul x-data="{ activePage: 1, submenu: null, activeSubmenu: null }" class="mb-6">
+        <li class="relative">
+          <a @click="activePage = 1; activeSubmenu = null; submenu = null"
+            :class="activePage === 1 ? 'active text-black bg-primary-300' : ''" href="index.html"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-shield-lock text-lg"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="relative">
+          <a @click="activePage = 2; activeSubmenu = null; submenu = null"
+            :class="activePage === 2 ? 'active text-black bg-primary-300' : ''" href="esport-team.html"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-controller text-lg"></i>
+            Form
+          </a>
+        </li>
+        <li class="relative">
+          <a @click="submenu !== 3 ? submenu = 3 : submenu = null; activePage = submenu === 3 ? 3 : activePage; activeSubmenu = null"
+            :class="submenu === 3 ? 'active text-black bg-primary-300' : ''" href="javascript:void(0)"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-text-paragraph text-lg"></i>
+            Incomes
+            <i :class="{ 'rotate-180': submenu === 3 }"
+              class="bi bi-chevron-down ms-auto transition-transform duration-200"></i>
+          </a>
+          <ul x-show="submenu === 3" class="ps-3 flex jdsnfsdnjsdmn">
+            <li>
+              <a @click="activeSubmenu = 1; activePage = null"
+                :class="activeSubmenu === 1 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Level
+                Income</a>
+            </li>
+            <li>
+              <a @click="activeSubmenu = 2; activePage = null"
+                :class="activeSubmenu === 2 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Global
+                Income</a>
+            </li>
+            <li>
+              <a @click="activeSubmenu = 3; activePage = null"
+                :class="activeSubmenu === 3 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Reffer
+                Income</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <div @click="sidebar = ! sidebar" :class="! sidebar ? '' : 'show'"
+      class="backDialog z-30 overflow-auto fixed bg-black bg-opacity-80 max-lg:[&.show]:inset-0"></div>
+    <main class="lg:ms-72 yujamnshjekwn py-4 flex jdsnfsdnjsdmn chsjuaielnsja">
+      <div class="flex olwuyhsbcnmdj bnshkajshwjio gap-3">
+        <h2 class="text-2xl font-medium text-primary-300">Dashboard</h2>
+
+        <div class="flex olwuyhsbcnmdj ghsnkalieksml">
+          <div x-data="{ open: false }">
+            <button @click="open = true"
+              class="flex olwuyhsbcnmdj qaksleiuryhnv w-10 h-10 rounded-full bg-primary-950 border border-primary-600 hover:bg-primary-300 hover:text-black focus:bg-primary-300 focus:text-black">
+              <i class="bi bi-gear-fill"></i>
+            </button>
+            <div x-show="open" :class="! open ? '' : 'show'"
+              class="[&.show_.bgDialog]:opacity-80 [&.show_.bgDialog]:inset-0">
+              <div @click="open = false" class="bgDialog fixed z-[60] opacity-0 -top-full bg-black"></div>
+              <div x-show="open" style="display:none" x-transition:enter="transition-transform duration-[400ms]"
+                x-transition:enter-start="ltr:translate-x-full rtl:-translate-x-full"
+                x-transition:enter-end="translate-x-0" x-transition:leave="transition-transform duration-[400ms]"
+                x-transition:leave-start="translate-x-0"
+                x-transition:leave-end="ltr:translate-x-full rtl:-translate-x-full" @click.away="open = false"
+                class="fixed top-0 bottom-0 end-0 w-5/6 sm:w-72 z-[70] bg-black border-y border-s border-primary-600 flex jdsnfsdnjsdmn thsjkalsueijm">
+                <div class="h-screen frame-corner">
+                  <div class="frame2"></div>
+                  <div
+                    class="min-h-[56px] flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 yujamnshjekwn pt-6 pb-4 border-b border-primary-600">
+                    <h3 class="flex flex-grow text-lg text-primary-300">Theme Customizer</h3>
+                    <button @click="open = false" class="flex olwuyhsbcnmdj qaksleiuryhnv">
+                      <span class="pointer-events-none bi bi-x-lg"></span>
+                    </button>
+                  </div>
+                  <div
+                    class="relative flex jdsnfsdnjsdmn chsjuaielnsja yujamnshjekwn py-2 min-h-[86vh] overflow-hidden">
+                    <div class="flex jdsnfsdnjsdmn gap-1.5">
+                      <h3>Theme Color</h3>
+                      <div class="relative flex flex-wrap olwuyhsbcnmdj thsjkalsueijm">
+                        <button data-color="default" title="default"
+                          class="inline-block p-3 bg-[#02fafc] [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="lime" title="lime"
+                          class="inline-block p-3 bg-[#84cc16] [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="red" title="red"
+                          class="inline-block p-3 bg-red-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="yellow" title="yellow"
+                          class="inline-block p-3 bg-yellow-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="green" title="green"
+                          class="inline-block p-3 bg-green-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="blue" title="blue"
+                          class="inline-block p-3 bg-blue-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="purple" title="purple"
+                          class="inline-block p-3 bg-purple-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="indigo" title="indigo"
+                          class="inline-block p-3 bg-indigo-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="pink" title="pink"
+                          class="inline-block p-3 bg-pink-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                        <button data-color="sky" title="sky"
+                          class="inline-block p-3 bg-sky-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
+                      </div>
+                    </div>
+
+                    <div class="flex jdsnfsdnjsdmn gap-1.5">
+                      <h3>Switch RTL</h3>
+                      <label class="relative w-12 h-[26px]">
+                        <input data-type="rtl" id="switch-rtl" type="checkbox"
+                          class="switch-checkbox relative inline-block w-12 h-[26px] transition-all duration-200 ease-in-out cursor-pointer appearance-none rounded-full border border-primary-600 bg-primary-900"
+                          checked>
+                        <div
+                          class="toggle-default absolute top-[3px] start-1 w-5 h-5 transition-all duration-200 ease-in-out transform bg-black rounded-full shadow-md">
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div x-data="{ dropdown: false }" class="relative">
+            <button @click="dropdown = ! dropdown"
+              class="w-10 h-10 flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv rounded-full border border-primary-600">
+              <img src="assets/img/avatar/avatar1.jpg" alt="ari budin"
+                class="w-10 h-10 flex-none rounded-full bg-primary-950 pointer-events-none">
+            </button>
+            <ul id="dropUser" x-show="dropdown" x-transition.duration.500ms :class="! dropdown ? '' : 'show'"
+              @click.outside="dropdown = false"
+              class="[&.show]:!opacity-100 [&.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out start-auto end-0 min-w-[180px] inline-flex jdsnfsdnjsdmn rounded-lg bg-primary-950 border border-primary-600 py-2">
+              <li class="relative">
+                <a href="#"
+                  class="flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 py-2 yujamnshjekwn hover:text-primary-300 hover:bg-primary-900">
+                  <i class="bi bi-person-fill"></i>
+                  Profile
+                </a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 py-2 yujamnshjekwn hover:text-primary-300 hover:bg-primary-900">
+                  <i class="bi bi-gear-fill"></i>
+                  Settings
+                </a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 py-2 yujamnshjekwn hover:text-primary-300 hover:bg-primary-900">
+                  <i class="bi bi-question-square-fill"></i>
+                  Help
+                </a>
+              </li>
+              <li class="relative">
+                <a href="#"
+                  class="flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 py-2 yujamnshjekwn hover:text-primary-300 hover:bg-primary-900">
+                  <i class="bi bi-box-arrow-right"></i>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="grid phaksrqnmchdb xl:vaysueikmnvhf chsjuaielnsja">
+        <div class="grid phaksrqnmchdb sm:vaysueikmnvhf chsjuaielnsja">
+          <div class="bg-black frame-corner overflow-hidden w-full relative">
+            <div class="frame-second absolute inset-0 border border-primary-600"></div>
+            <div
+              class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+              <h2 class="font-medium text-primary-300">Total Income</h2>
+            </div>
+            <div class="relative p-6">
+              <div class="flex olwuyhsbcnmdj bnshkajshwjio text-primary-300">
+                <span x-data="counter(1050, 3)" x-intersect="startCounting" class="text-5xl">
+                  <span class="font-medium">$</span><span x-text="current"></span>
+                </span>
+                <i class="bi bi-calculator text-5xl"></i>
+              </div>
+            </div>
+          </div>
+          <div x-data="backgroundChanger()" x-init="start()"
+            class="px-4 sm:hidden grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mt-2 mb-2">
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 1}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 2}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 3}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 4}"></div>
+          </div>
+          <div class="bg-black frame-corner overflow-hidden w-full relative">
+            <div class="frame-second absolute inset-0 border border-primary-600"></div>
+            <div
+              class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+              <h2 class="font-medium text-primary-300">Main Wallet</h2>
+            </div>
+            <div class="relative p-6">
+              <div class="flex olwuyhsbcnmdj bnshkajshwjio text-primary-300">
+                <span x-data="counter(100, 3)" x-intersect="startCounting" class="text-5xl">
+                  <span class="font-medium">$</span><span x-text="current"></span>
+                </span>
+                <i class="bi bi-wallet text-5xl"></i>
+              </div>
+            </div>
+          </div>
+          <div x-data="backgroundChanger()" x-init="start()"
+            class="px-4 sm:hidden grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mt-2 mb-2">
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 1}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 2}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 3}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 4}"></div>
+          </div>
+          <div class="bg-black frame-corner overflow-hidden w-full relative">
+            <div class="frame-second absolute inset-0 border border-primary-600"></div>
+            <div
+              class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+              <h2 class="font-medium text-primary-300">Free Wallet</h2>
+            </div>
+            <div class="relative p-6">
+              <div class="flex olwuyhsbcnmdj bnshkajshwjio text-primary-300">
+                <span x-data="counter(100, 3)" x-intersect="startCounting" class="text-5xl">
+                  <span class="font-medium">$</span><span x-text="current"></span>
+                </span>
+                <i class="bi bi-wallet text-5xl"></i>
+              </div>
+            </div>
+          </div>
+          <div x-data="backgroundChanger()" x-init="start()"
+            class="px-4 sm:hidden grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mt-2 mb-2">
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 1}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 2}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 3}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 4}"></div>
+          </div>
+          <div class="bg-black frame-corner overflow-hidden w-full relative">
+            <div class="frame-second absolute inset-0 border border-primary-600"></div>
+            <div
+              class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+              <h2 class="font-medium text-primary-300">Split Wallet</h2>
+            </div>
+            <div class="relative p-6">
+              <div class="flex olwuyhsbcnmdj bnshkajshwjio text-primary-300">
+                <span x-data="counter(100, 3)" x-intersect="startCounting" class="text-5xl">
+                  <span class="font-medium">$</span><span x-text="current"></span>
+                </span>
+                <i class="bi bi-wallet text-5xl"></i>
+
+              </div>
+            </div>
+          </div>
+          <div  x-data="backgroundChanger()" x-init="start()"
+            class="px-4 sm:hidden grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mt-2 mb-2">
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 1}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 2}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 3}"></div>
+            <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 4}"></div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second  xl:absolute inset-0 border border-primary-600">
+            <div class="flex flex-wrap pt-5 pb-3">
+              <div class="w-full sm:w-1/2 px-4">
+                <button
+                  class="frame-corner inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-600 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0 w-full">RECHARGE</button>
+              </div>
+              <div class="w-full sm:w-1/2 px-4 pt-4 sm:pt-0">
+                <button
+                  class="frame-corner inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-600 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0 w-full">WITHDRAW</button>
+              </div>
+            </div>
+            <div x-data="backgroundChanger()" x-init="start()"
+              class="px-4 grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mt-2 mb-2">
+              <div class="p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 1}"></div>
+              <div class="p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 2}"></div>
+              <div class="p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 3}"></div>
+              <div class="p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 4}"></div>
+              <div class="hidden sm:block p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 5}"></div>
+              <div class="hidden sm:block p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 6}"></div>
+              <div class="hidden sm:block p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 7}"></div>
+              <div class="hidden sm:block p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 8}"></div>
+              <div class="hidden sm:block p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 9}"></div>
+              <div class="hidden sm:block p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 10}"></div>
+              <div class="hidden sm:block p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 11}"></div>
+              <div class="hidden sm:block p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 12}"></div>
+            </div>
+            <div class="flex flex-wrap h-[78%] pt-3 mb-5">
+              <div class="w-full sm:w-1/3 px-4">
+                <div class="bg-black frame-corner overflow-hidden w-full h-[82%]">
+                  <div class="frame2 absolute inset-0 border border-primary-600"></div>
+                  <div class="flex justify-center items-center flex-col h-full p-5 xl:p-0">
+                    <i class="bi bi-clock text-5xl flex justify-center pt-2"></i>
+                    <h2 class="font-medium text-primary-300 text-xl text-center pt-3">Registrain <br
+                        class="hidden xl:block"> Time</h2>
+                    <h2 class="font-medium text-primary-300 text-2xl text-center pt-2">09:00 AM</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full sm:w-1/3 px-4">
+                <div class="bg-black frame-corner overflow-hidden w-full h-[82%]">
+                  <div class="frame2 absolute inset-0 border border-primary-600"></div>
+                  <div class="flex justify-center items-center flex-col h-full p-5 xl:p-0">
+                    <i class="bi bi-people-fill text-5xl flex justify-center pt-2"></i>
+                    <h2 class="font-medium text-primary-300 text-xl text-center pt-3">Total <br class="hidden xl:block">
+                      Team</h2>
+                    <h2 class="font-medium text-primary-300 text-2xl text-center pt-2">100</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full sm:w-1/3 px-4">
+                <div class="bg-black frame-corner overflow-hidden w-full h-[82%]">
+                  <div class="frame2 absolute inset-0 border border-primary-600"></div>
+                  <div class="flex justify-center items-center flex-col h-full p-5 xl:p-0">
+                    <i class="bi bi-person-fill-down text-5xl flex justify-center pt-2"></i>
+                    <h2 class="font-medium text-primary-300 text-xl text-center pt-3">Direct <br
+                        class="hidden xl:block"> Team</h2>
+                    <h2 class="font-medium text-primary-300 text-2xl text-center pt-2">70</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Threats by Type</h2>
+          </div>
+          <div class="relative p-6">
+            <canvas id="threatsChart"></canvas>
+          </div>
+          <div x-data="backgroundChanger()" x-init="start()"
+            class="yujamnshjekwn grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mb-6">
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 1}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 2}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 3}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 4}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 5}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 6}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 7}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 8}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 9}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 10}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 11}"></div>
+            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 12}"></div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="grid phaksrqnmchdb lg:xyajskeyhndma chsjuaielnsja">
+        <div class="lg:col-span-2 bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Threats by Country</h2>
+          </div>
+          <div class="relative p-6">
+            <div class="grid phaksrqnmchdb xl:xyajskeyhndma ghsnkalieksml">
+              <div class="relative xl:col-span-2">
+                <div id="map" class="h-56 md:h-80 w-full"></div>
+              </div>
+              <div class="flex jdsnfsdnjsdmn pt-2">
+                <div class="py-2 flex olwuyhsbcnmdj thsjkalsueijm bnshkajshwjio">
+                  <div class="flex olwuyhsbcnmdj thsjkalsueijm font-medium text-sm">
+                    <div class="size-2.5 bg-red-500 bg-opacity-90 rounded-full"></div>
+                    India
+                  </div>
+                  <span class="text-sm font-semibold text-primary-300">455</span>
+                </div>
+                <div class="py-2 flex olwuyhsbcnmdj thsjkalsueijm bnshkajshwjio">
+                  <div class="flex olwuyhsbcnmdj thsjkalsueijm font-medium text-sm">
+                    <div class="size-2.5 bg-red-500 bg-opacity-80 rounded-full"></div>
+                    China
+                  </div>
+                  <span class="text-sm font-semibold text-primary-300">260</span>
+                </div>
+                <div class="py-2 flex olwuyhsbcnmdj thsjkalsueijm bnshkajshwjio">
+                  <div class="flex olwuyhsbcnmdj thsjkalsueijm font-medium text-sm">
+                    <div class="size-2.5 bg-red-500 bg-opacity-70 rounded-full"></div>
+                    United States
+                  </div>
+                  <span class="text-sm font-semibold text-primary-300">320</span>
+                </div>
+                <div class="py-2 flex olwuyhsbcnmdj thsjkalsueijm bnshkajshwjio">
+                  <div class="flex olwuyhsbcnmdj thsjkalsueijm font-medium text-sm">
+                    <div class="size-2.5 bg-red-500 bg-opacity-60 rounded-full"></div>
+                    Indonesia
+                  </div>
+                  <span class="text-sm font-semibold text-primary-300">275</span>
+                </div>
+                <div class="py-2 flex olwuyhsbcnmdj thsjkalsueijm bnshkajshwjio">
+                  <div class="flex olwuyhsbcnmdj thsjkalsueijm font-medium text-sm">
+                    <div class="size-2.5 bg-red-500 bg-opacity-50 rounded-full"></div>
+                    Brazil
+                  </div>
+                  <span class="text-sm font-semibold text-primary-300">175</span>
+                </div>
+                <div class="py-2 flex olwuyhsbcnmdj thsjkalsueijm bnshkajshwjio">
+                  <div class="flex olwuyhsbcnmdj thsjkalsueijm font-medium text-sm">
+                    <div class="size-2.5 bg-red-500 bg-opacity-40 rounded-full"></div>
+                    Spain
+                  </div>
+                  <span class="text-sm font-semibold text-primary-300">135</span>
+                </div>
+                <div class="py-2 flex olwuyhsbcnmdj thsjkalsueijm bnshkajshwjio">
+                  <div class="flex olwuyhsbcnmdj thsjkalsueijm font-medium text-sm">
+                    <div class="size-2.5 bg-red-500 bg-opacity-30 rounded-full"></div>
+                    Italy
+                  </div>
+                  <span class="text-sm font-semibold text-primary-300">127</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Threats Detected</h2>
+          </div>
+          <div class="relative p-6">
+            <div class="relative size-48 overflow-hidden flex qaksleiuryhnv olwuyhsbcnmdj mx-auto">
+              <div class="absolute size-48 rounded-full border-2 border-primary-600"></div>
+              <div class="absolute size-40 rounded-full border-2 border-primary-600"></div>
+              <div class="absolute size-32 rounded-full border-2 border-primary-600"></div>
+              <div class="absolute size-24 rounded-full border-2 border-primary-600"></div>
+              <div class="absolute w-2 h-48 border-e-2 border-primary-600 -ms-1"></div>
+              <div class="absolute h-2 w-48 border-b-2 border-primary-600 -mt-1"></div>
+              <div class="absolute sweep z-30 size-24 start-0 rtl:start-1/2 top-0"></div>
+              <div class="animate-pulse size-2 rounded-full bg-red-500 absolute top-6 start-12"></div>
+              <div class="animate-pulse size-2 rounded-full bg-red-500 absolute bottom-16 end-12"></div>
+            </div>
+          </div>
+          <div class="yujamnshjekwn pb-6 text-center">
+            <p><span class="text-red-500 font-medium animate-pulse">Warning:</span> 2 New Threats Detected</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid phaksrqnmchdb sm:vaysueikmnvhf lg:xyajskeyhndma chsjuaielnsja">
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Threats by Endpoint</h2>
+          </div>
+          <div class="relative p-6 flex jdsnfsdnjsdmn gap-3">
+            <div class="flex olwuyhsbcnmdj bnshkajshwjio">
+              <div class="flex olwuyhsbcnmdj">
+                <i class="bi bi-laptop text-primary-300 text-2xl"></i>
+                <span class="ms-3 text-lg font-medium">Laptops</span>
+              </div>
+              <span class="text-lg font-bold text-red-500">15</span>
+            </div>
+            <div class="flex olwuyhsbcnmdj bnshkajshwjio">
+              <div class="flex olwuyhsbcnmdj">
+                <i class="bi bi-phone text-primary-300 text-2xl"></i>
+                <span class="ms-3 text-lg font-medium">Mobile</span>
+              </div>
+              <span class="text-lg font-bold text-red-500">10</span>
+            </div>
+            <div class="flex olwuyhsbcnmdj bnshkajshwjio">
+              <div class="flex olwuyhsbcnmdj">
+                <i class="bi bi-tablet text-primary-300 text-2xl"></i>
+                <span class="ms-3 text-lg font-medium">Tablets</span>
+              </div>
+              <span class="text-lg font-bold text-red-500">8</span>
+            </div>
+            <div class="flex olwuyhsbcnmdj bnshkajshwjio">
+              <div class="flex olwuyhsbcnmdj">
+                <i class="bi bi-server text-primary-300 text-2xl"></i>
+                <span class="ms-3 text-lg font-medium">Servers</span>
+              </div>
+              <span class="text-lg font-bold text-red-500">5</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Compliance Status</h2>
+          </div>
+          <div class="relative p-6">
+            <div>
+              <div class="relative flex qaksleiuryhnv olwuyhsbcnmdj" x-data="progressCircle(89, 5)"
+                x-intersect="startProgress()">
+                <svg width="100" height="100">
+                  <circle cx="50" cy="50" r="45" class="stroke-primary-950" stroke-width="10" fill="none"></circle>
+                  <circle cx="50" cy="50" r="45" class="stroke-primary-300" stroke-width="10" fill="none"
+                    :stroke-dasharray="283" :stroke-dashoffset="strokeDashoffset"></circle>
+                </svg>
+                <div class="absolute" x-text="percentage + '%'"></div>
+              </div>
+            </div>
+            <div class="flex jdsnfsdnjsdmn">
+              <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
+                <span>Total Policies:</span>
+                <span class="font-semibold text-primary-300">120</span>
+              </div>
+              <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
+                <span>Policies Compliant:</span>
+                <span class="font-semibold text-primary-300">102</span>
+              </div>
+              <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
+                <span>Policies Non-Compliant:</span>
+                <span class="font-semibold text-primary-300">18</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sm:col-span-2 lg:col-span-1 bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div
+            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
+            <h2 class="font-medium text-primary-300">Monthly Threats</h2>
+          </div>
+          <div class="relative py-6 px-8">
+            <canvas id="monthlyThreatsChart"></canvas>
+          </div>
+          <div class="flex jdsnfsdnjsdmn yujamnshjekwn pb-6">
+            <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
+              <span>New Threats:</span>
+              <span class="font-semibold text-primary-300">5</span>
+            </div>
+            <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
+              <span>Unresolved:</span>
+              <span class="font-semibold text-primary-300">12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div x-data="backgroundStep()" x-init="start()" class="grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mb-6">
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 1}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 2}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 3}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 4}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 5}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 6}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 7}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 8}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 9}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 10}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 11}"></div>
+        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 12}"></div>
+      </div>
+    </main>
+  </div>
+  <script src="assets/vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
+  <script src="assets/vendors/jsvectormap/dist/maps/world.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new jsVectorMap({
+        selector: "#map",
+        map: "world",
+        visualizeData: {
+          scale: ['#ffcccc', '#ff0000'], // Color scale from light to dark
+          values: {
+            US: 320,
+            RU: 76,
+            IT: 127,
+            ES: 135,
+            BR: 175,
+            ID: 275,
+            IN: 455,
+            CN: 260,
+            JP: 127,
+            ZA: 76
+          }
+        },
+        markers: [
+          { name: "Washington - 32", coords: [38.89511, -77.03637] },
+          { name: "Moscow - 76", coords: [55.7558, 37.6173] },
+          { name: "Rome - 127", coords: [41.9028, 12.4964] },
+          { name: "Madrid - 135", coords: [40.4168, -3.7038] },
+          { name: "Brasília - 175", coords: [-15.8267, -47.9218] },
+          { name: "Jakarta - 275", coords: [-6.2088, 106.8456] },
+          { name: "New Delhi - 455", coords: [28.6139, 77.2090] },
+          { name: "Beijing - 260", coords: [39.9042, 116.4074] },
+          { name: "Tokyo - 127", coords: [35.6762, 139.6503] },
+          { name: "Pretoria - 76", coords: [-25.7479, 28.2293] }
+        ],
+        markerStyle: {
+          initial: {
+            fill: '#FF0000'
+          }
+        }
+      });
+    });
+  </script>
+  <script src="assets/vendors/chart.js/dist/chart.umd.js"></script>
+
+  <script>
+    const ctx = document.getElementById('threatsChart').getContext('2d');
+    Chart.defaults.color = '#0a8f8e';
+    const threatsChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Malware', 'Phishing', 'Ransomware', 'SQL Injection', 'DDoS'],
+        datasets: [{
+          label: 'Number of Threats',
+          data: [300, 250, 200, 150, 100],
+          backgroundColor: [
+            'rgba(255, 0, 0, 0.2)',     // Malware (Red, 70% opacity)
+            'rgba(60, 179, 113, 0.2)',     // Phishing (green, 70% opacity)
+            'rgba(255, 255, 0, 0.2)',   // Ransomware (Yellow, 70% opacity)
+            'rgba(0, 128, 128, 0.2)',   // SQL Injection (Teal, 70% opacity)
+            'rgba(238, 130, 238, 0.2)'    // DDoS (Purple, 70% opacity)
+          ],
+          borderColor: [
+            'rgba(255, 0, 0, 1)',     // Malware (Red, 100% opacity)
+            'rgba(60, 179, 113, 1)',     // Phishing (green, 100% opacity)
+            'rgba(255, 255, 0, 1)',   // Ransomware (Yellow, 100% opacity)
+            'rgba(0, 128, 128, 1)',   // SQL Injection (Teal, 100% opacity)
+            'rgba(238, 130, 238, 1)'    // DDoS (Purple, 100% opacity)
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        indexAxis: 'y',  // Horizontal bar chart
+        plugins: {
+          legend: {
+            display: false  // Hide the legend
+          }
+        }
+      }
+    });
+
+    const ctxv = document.getElementById('monthlyThreatsChart').getContext('2d');
+    const monthlyThreatsChart = new Chart(ctxv, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+          label: 'Threats',
+          data: [150, 200, 180, 220, 250, 230],  // Replace with your data
+          backgroundColor: 'rgba(255, 99, 132, 0.8)',  // Custom color with opacity
+          borderColor: 'rgba(255, 99, 132, 1)',  // Custom border color
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          tooltip: {
+            enabled: true  // Enable tooltips
+          },
+          legend: {
+            display: false  // Hide the legend
+          }
+        },
+        scales: {
+          x: {
+            display: false,  // Hide x-axis labels
+            grid: {
+              display: false  // Hide x-axis grid lines
+            }
+          },
+          y: {
+            display: false,  // Hide y-axis labels
+            grid: {
+              display: false  // Hide y-axis grid lines
+            }
+          }
+        }
+      }
+    });
+  </script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/customizer.js"></script>
+  <script src="assets/vendors/@alpinejs/intersect/dist/cdn.min.js"></script>
+  <script src="assets/vendors/alpinejs/dist/cdn.min.js"></script>
+
+</body>
+
+</html>
