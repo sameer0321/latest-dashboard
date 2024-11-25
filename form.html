@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Dashboard</title>
+  <meta name="description" content="Dashboard">
+  <link rel="stylesheet" href="assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link href="assets/css/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/customizer.css">
+  <link rel="icon" href="assets/img/favicon.png">
+  <style>
+    /* For Chrome, Safari, Edge, and Opera */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* For Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-primary-600 font-sans pt-14 lg:pt-0" x-data="{ sidebar: false }">
+  <div class="wrapper">
+    <header
+      class="z-20 fixed lg:hidden top-0 inset-x-0 flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm bg-black border-b border-primary-600 yujamnshjekwn py-3">
+      <div class="flex olwuyhsbcnmdj thsjkalsueijm">
+        <div class="flex qaksleiuryhnv olwuyhsbcnmdj min-h-10 min-w-10">
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-clockwise">
+            <circle cx="50" cy="50" r="20" class="stroke-primary-300" stroke-width="5" fill="none"
+              stroke-dasharray="31.4" stroke-dashoffset="31.4" />
+          </svg>
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-counterclockwise">
+            <circle cx="50" cy="50" r="10" class="stroke-primary-300" stroke-width="3" fill="none"
+              stroke-dasharray="10.6" stroke-dashoffset="10.6" />
+          </svg>
+          <div class="size-2 bg-primary-300 rounded-full absolute animate-pulse"></div>
+        </div>
+        <h3 class="text-3xl font-medium text-primary-300">Logo</h3>
+      </div>
+      <button @click="sidebar = ! sidebar" class="flex olwuyhsbcnmdj qaksleiuryhnv size-10">
+        <i class="bi bi-list text-2xl text-primary-300"></i>
+      </button>
+    </header>
+
+
+    <aside id="sidebar" :class="! sidebar ? '' : 'show'"
+      class="fixed inset-y-0 start-0 sidebar flex jdsnfsdnjsdmn chsjuaielnsja w-72 lg:min-w-72 lg:[&.show]:min-w-[0px] h-screen overflow-auto scrollbars bg-black border-e border-primary-600 transition-all duration-500 ease-in-out -translate-x-full lg:translate-x-0 [&.show]:translate-x-0 max-lg:z-50 rtl:translate-x-full lg:rtl:translate-x-0 uioajsncmhdje">
+      <a href="index.html" class="pt-4 flex olwuyhsbcnmdj gap-3">
+        <div class="flex qaksleiuryhnv olwuyhsbcnmdj min-h-10 min-w-10">
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-clockwise">
+            <circle cx="50" cy="50" r="20" class="stroke-primary-300" stroke-width="5" fill="none"
+              stroke-dasharray="31.4" stroke-dashoffset="31.4" />
+          </svg>
+          <svg width="100" height="100" viewBox="0 0 100 100" class="absolute spin-counterclockwise">
+            <circle cx="50" cy="50" r="10" class="stroke-primary-300" stroke-width="3" fill="none"
+              stroke-dasharray="10.6" stroke-dashoffset="10.6" />
+          </svg>
+          <div class="size-2 bg-primary-300 rounded-full absolute animate-pulse"></div>
+        </div>
+        <h3 class="text-3xl font-medium text-primary-300">Logo</h3>
+      </a>
+      <ul x-data="{ activePage: 2, submenu: null, activeSubmenu: null }" class="mb-6">
+        <li class="relative">
+          <a @click="activePage = 1; activeSubmenu = null; submenu = null"
+            :class="activePage === 1 ? 'active text-black bg-primary-300' : ''" href="index.html"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-shield-lock text-lg"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="relative">
+          <a @click="activePage = 2; activeSubmenu = null; submenu = null"
+            :class="activePage === 2 ? 'active text-black bg-primary-300' : ''" href="form.html"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-card-list text-lg"></i>
+            Form
+          </a>
+        </li>
+        <li class="relative">
+          <a @click="submenu !== 3 ? submenu = 3 : submenu = null; activePage = submenu === 3 ? 3 : activePage; activeSubmenu = null"
+            :class="submenu === 3 ? 'active text-black bg-primary-300' : ''" href="javascript:void(0)"
+            class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
+            <i class="bi bi-text-paragraph text-lg"></i>
+            Incomes
+            <i :class="{ 'rotate-180': submenu === 3 }"
+              class="bi bi-chevron-down ms-auto transition-transform duration-200"></i>
+          </a>
+          <ul x-show="submenu === 3" class="ps-3 flex jdsnfsdnjsdmn">
+            <li>
+              <a @click="activeSubmenu = 1; activePage = null"
+                :class="activeSubmenu === 1 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Level
+                Income</a>
+            </li>
+            <li>
+              <a @click="activeSubmenu = 2; activePage = null"
+                :class="activeSubmenu === 2 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Global
+                Income</a>
+            </li>
+            <li>
+              <a @click="activeSubmenu = 3; activePage = null"
+                :class="activeSubmenu === 3 ? 'active text-black bg-primary-300' : ''" href="#"
+                class="flex py-2 ps-8 pe-4 font-medium hover:bg-primary-300 hover:text-black item-corner">Reffer
+                Income</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <div @click="sidebar = ! sidebar" :class="! sidebar ? '' : 'show'"
+      class="backDialog z-30 overflow-auto fixed bg-black bg-opacity-80 max-lg:[&.show]:inset-0"></div>
+    <main class="lg:ms-72 yujamnshjekwn py-4 flex jdsnfsdnjsdmn chsjuaielnsja">
+      <div class="bg-black frame-corner overflow-hidden w-full">
+        <div class="frame-second absolute inset-0 border border-primary-600"></div>
+        <div class="p-5">
+          <h1 class="text-primary-300 text-center text-6xl">Form</h1>
+          <div class="grid phaksrqnmchdb xl:vaysueikmnvhf chsjuaielnsja pt-14">
+            <div>
+              <div class="relative mb-6">
+                <label for="input-text" class="mb-2 block">Username</label>
+                <input type="text" id="input-text" required
+                  class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
+                  placeholder="Enter Your Username">
+              </div>
+              <div class="relative mb-6">
+                <label for="input-email" class="mb-2 block">Email</label>
+                <input type="email" id="input-email" required
+                  class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
+                  placeholder="Enter Your Email">
+              </div>
+              <div class="relative mb-6">
+                <label for="input-password" class="mb-2 block">Password</label>
+                <input type="password" id="input-password" required
+                  class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
+                  placeholder="Enter Your Password">
+              </div>
+              <!-- <div class="relative mb-6">
+                <label for="textarea" class="mb-2 block">Suggestions</label>
+                <textarea id="textarea" rows="4" required
+                  class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
+                  placeholder="What would you like to see ?"></textarea>
+              </div> -->
+            </div>
+            <div>
+              <div class="relative mb-6">
+                <label for="input-text" class="mb-2 block">Currency</label>
+                <input type="text" id="input-text" readonly
+                  class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
+                  placeholder="$20">
+              </div>
+              <div class="relative mb-6">
+                <label for="input-text" class="mb-2 block">Website</label>
+                <input type="text" id="input-text" readonly
+                  class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
+                  placeholder="www.example.com">
+              </div>
+              <div class="relative mb-6">
+                <label for="input-text" class="mb-2 block">Phone</label>
+                <input type="number" id="input-text"
+                  class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
+                  placeholder="Enter Your Number">
+              </div>
+            </div>
+          </div>
+          <div class="flex" style="justify-content: center;">
+            <button 
+              class="frame-corner w-full xl:w-2/4 inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-600 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">Submit</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- charts js -->
+  <script src="assets/vendors/chart.js/dist/chart.umd.js"></script>
+  <script>
+    var ctx = document.getElementById('teamComparisonChart').getContext('2d');
+    Chart.defaults.color = '#0a8f8e';
+    var teamComparisonChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Offense', 'Defense', 'Strategy', 'Teamwork', 'Adaptability'],
+        datasets: [{
+          label: 'Main Team',
+          data: [90, 81, 56, 55, 40],
+          fill: true,
+          backgroundColor: 'rgba(255, 159, 64, 0.2)',
+          borderColor: 'rgba(255, 159, 64, 1)',
+          pointBackgroundColor: 'rgba(255, 159, 64, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(255, 159, 64, 1)'
+        }, {
+          label: 'Secondary Team',
+          data: [40, 19, 96, 27, 100],
+          fill: true,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(75, 192, 192, 1)'
+        }]
+      },
+      options: {
+        scales: {
+          r: {
+            angleLines: {
+              color: '#0a8f8e' // Lines radiating from the center
+            },
+            grid: {
+              color: '#0a8f8e', // Circular lines around each level
+              lineWidth: 2 // Increase line width for better visibility
+            },
+            pointLabels: {
+              fontSize: 14,
+              color: '#0a8f8e' // Labels around the edge
+            },
+            ticks: {
+              beginAtZero: false,
+              backdropColor: 'rgba(0, 0, 0, 0)', // Make the background of the ticks transparent
+              color: '#0a8f8e'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#0a8f8e'
+            }
+          }
+        }
+      }
+    });
+
+    const ctxs = document.getElementById('revenueDoughnut').getContext('2d');
+    const data = {
+      labels: ['Sponsorship', 'Merchandise', 'Tournament'],
+      datasets: [{
+        data: [30000, 15000, 5000], // Data for each segment
+        backgroundColor: ['#4caf50', '#ff9800', '#f44336'], // Colors for each segment
+        hoverBackgroundColor: ['#66bb6a', '#ffa726', '#ef5350'], // Hover colors
+        borderColor: '#000', // Border color
+        borderWidth: 2
+      }]
+    };
+    const options = {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function (tooltipItem) {
+              const value = tooltipItem.raw; // Get the value for the tooltip
+              return 'Revenue' + ': $' + value.toLocaleString(); // Add dollar symbol and format number
+            }
+          }
+        }
+      }
+    };
+    const doughnutChart = new Chart(ctxs, {
+      type: 'doughnut',
+      data: data,
+      options: options
+    });
+
+    const ctc = document.getElementById('trainingHoursChart').getContext('2d');
+    const trainingHoursChart = new Chart(ctc, {
+      type: 'line',
+      data: {
+        labels: [
+          'Jun 1', 'Jun 2', 'Jun 3', 'Jun 4', 'Jun 5', 'Jun 6', 'Jun 7',
+          'Jun 8', 'Jun 9', 'Jun 10', 'Jun 11', 'Jun 12', 'Jun 13', 'Jun 14'
+        ],
+        datasets: [{
+          label: 'Training Hours',
+          data: [2, 3, 4, 1.5, 3.5, 2, 4, 5, 6, 3, 4.5, 2, 3, 4],  // Sample data for 14 days
+          borderColor: 'rgba(75, 192, 192, 1)',  // Line color
+          backgroundColor: 'rgba(75, 192, 192, 0.08)',  // Fill color under the line
+          borderWidth: 2,
+          fill: true,
+          tension: 0.4  // Smooth curve
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            mode: 'index',
+            intersect: false,
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Hours of Training'
+            },
+            ticks: {
+              stepSize: 1  // Increment in hours
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/customizer.js"></script>
+  <script src="assets/vendors/@alpinejs/intersect/dist/cdn.min.js"></script>
+  <script src="assets/vendors/alpinejs/dist/cdn.min.js"></script><!-- core js -->
+</body>
+
+</html>

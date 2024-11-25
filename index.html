@@ -68,9 +68,9 @@
         </li>
         <li class="relative">
           <a @click="activePage = 2; activeSubmenu = null; submenu = null"
-            :class="activePage === 2 ? 'active text-black bg-primary-300' : ''" href="esport-team.html"
+            :class="activePage === 2 ? 'active text-black bg-primary-300' : ''" href="form.html"
             class="flex olwuyhsbcnmdj thsjkalsueijm py-2 uioajsncmhdje font-medium hover:bg-primary-300 hover:text-black item-corner">
-            <i class="bi bi-controller text-lg"></i>
+            <i class="bi bi-card-list text-lg"></i>
             Form
           </a>
         </li>
@@ -113,73 +113,6 @@
         <h2 class="text-2xl font-medium text-primary-300">Dashboard</h2>
 
         <div class="flex olwuyhsbcnmdj ghsnkalieksml">
-          <div x-data="{ open: false }">
-            <button @click="open = true"
-              class="flex olwuyhsbcnmdj qaksleiuryhnv w-10 h-10 rounded-full bg-primary-950 border border-primary-600 hover:bg-primary-300 hover:text-black focus:bg-primary-300 focus:text-black">
-              <i class="bi bi-gear-fill"></i>
-            </button>
-            <div x-show="open" :class="! open ? '' : 'show'"
-              class="[&.show_.bgDialog]:opacity-80 [&.show_.bgDialog]:inset-0">
-              <div @click="open = false" class="bgDialog fixed z-[60] opacity-0 -top-full bg-black"></div>
-              <div x-show="open" style="display:none" x-transition:enter="transition-transform duration-[400ms]"
-                x-transition:enter-start="ltr:translate-x-full rtl:-translate-x-full"
-                x-transition:enter-end="translate-x-0" x-transition:leave="transition-transform duration-[400ms]"
-                x-transition:leave-start="translate-x-0"
-                x-transition:leave-end="ltr:translate-x-full rtl:-translate-x-full" @click.away="open = false"
-                class="fixed top-0 bottom-0 end-0 w-5/6 sm:w-72 z-[70] bg-black border-y border-s border-primary-600 flex jdsnfsdnjsdmn thsjkalsueijm">
-                <div class="h-screen frame-corner">
-                  <div class="frame2"></div>
-                  <div
-                    class="min-h-[56px] flex lkagdteuqnvdg olwuyhsbcnmdj gap-3 yujamnshjekwn pt-6 pb-4 border-b border-primary-600">
-                    <h3 class="flex flex-grow text-lg text-primary-300">Theme Customizer</h3>
-                    <button @click="open = false" class="flex olwuyhsbcnmdj qaksleiuryhnv">
-                      <span class="pointer-events-none bi bi-x-lg"></span>
-                    </button>
-                  </div>
-                  <div
-                    class="relative flex jdsnfsdnjsdmn chsjuaielnsja yujamnshjekwn py-2 min-h-[86vh] overflow-hidden">
-                    <div class="flex jdsnfsdnjsdmn gap-1.5">
-                      <h3>Theme Color</h3>
-                      <div class="relative flex flex-wrap olwuyhsbcnmdj thsjkalsueijm">
-                        <button data-color="default" title="default"
-                          class="inline-block p-3 bg-[#02fafc] [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="lime" title="lime"
-                          class="inline-block p-3 bg-[#84cc16] [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="red" title="red"
-                          class="inline-block p-3 bg-red-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="yellow" title="yellow"
-                          class="inline-block p-3 bg-yellow-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="green" title="green"
-                          class="inline-block p-3 bg-green-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="blue" title="blue"
-                          class="inline-block p-3 bg-blue-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="purple" title="purple"
-                          class="inline-block p-3 bg-purple-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="indigo" title="indigo"
-                          class="inline-block p-3 bg-indigo-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="pink" title="pink"
-                          class="inline-block p-3 bg-pink-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                        <button data-color="sky" title="sky"
-                          class="inline-block p-3 bg-sky-500 [&.active]:border [&.active]:border-black hover:opacity-90 rounded-full cursor-pointer"></button>
-                      </div>
-                    </div>
-
-                    <div class="flex jdsnfsdnjsdmn gap-1.5">
-                      <h3>Switch RTL</h3>
-                      <label class="relative w-12 h-[26px]">
-                        <input data-type="rtl" id="switch-rtl" type="checkbox"
-                          class="switch-checkbox relative inline-block w-12 h-[26px] transition-all duration-200 ease-in-out cursor-pointer appearance-none rounded-full border border-primary-600 bg-primary-900"
-                          checked>
-                        <div
-                          class="toggle-default absolute top-[3px] start-1 w-5 h-5 transition-all duration-200 ease-in-out transform bg-black rounded-full shadow-md">
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <div x-data="{ dropdown: false }" class="relative">
             <button @click="dropdown = ! dropdown"
               class="w-10 h-10 flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv rounded-full border border-primary-600">
@@ -235,7 +168,7 @@
                 <span x-data="counter(1050, 3)" x-intersect="startCounting" class="text-5xl">
                   <span class="font-medium">$</span><span x-text="current"></span>
                 </span>
-                <i class="bi bi-calculator text-5xl"></i>
+                <i class="bi bi-clipboard2-data text-5xl"></i>
               </div>
             </div>
           </div>
@@ -258,7 +191,7 @@
                 <span x-data="counter(100, 3)" x-intersect="startCounting" class="text-5xl">
                   <span class="font-medium">$</span><span x-text="current"></span>
                 </span>
-                <i class="bi bi-wallet text-5xl"></i>
+                <i class="bi bi-wallet2 text-5xl"></i>
               </div>
             </div>
           </div>
@@ -281,7 +214,7 @@
                 <span x-data="counter(100, 3)" x-intersect="startCounting" class="text-5xl">
                   <span class="font-medium">$</span><span x-text="current"></span>
                 </span>
-                <i class="bi bi-wallet text-5xl"></i>
+                <i class="bi bi-wallet2 text-5xl"></i>
               </div>
             </div>
           </div>
@@ -304,12 +237,12 @@
                 <span x-data="counter(100, 3)" x-intersect="startCounting" class="text-5xl">
                   <span class="font-medium">$</span><span x-text="current"></span>
                 </span>
-                <i class="bi bi-wallet text-5xl"></i>
+                <i class="bi bi-wallet2 text-5xl"></i>
 
               </div>
             </div>
           </div>
-          <div  x-data="backgroundChanger()" x-init="start()"
+          <div x-data="backgroundChanger()" x-init="start()"
             class="px-4 sm:hidden grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mt-2 mb-2">
             <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 1}"></div>
             <div class="sm:hidden p-1 bg-primary-950" :class="{'!bg-primary-300': activeBox > 2}"></div>
@@ -322,11 +255,11 @@
             <div class="flex flex-wrap pt-5 pb-3">
               <div class="w-full sm:w-1/2 px-4">
                 <button
-                  class="frame-corner inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-600 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0 w-full">RECHARGE</button>
+                  class="frame-corner inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-300 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0 w-full">RECHARGE</button>
               </div>
               <div class="w-full sm:w-1/2 px-4 pt-4 sm:pt-0">
                 <button
-                  class="frame-corner inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-600 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0 w-full">WITHDRAW</button>
+                  class="frame-corner inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-300 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0 w-full">WITHDRAW</button>
               </div>
             </div>
             <div x-data="backgroundChanger()" x-init="start()"
@@ -349,7 +282,7 @@
                 <div class="bg-black frame-corner overflow-hidden w-full h-[82%]">
                   <div class="frame2 absolute inset-0 border border-primary-600"></div>
                   <div class="flex justify-center items-center flex-col h-full p-5 xl:p-0">
-                    <i class="bi bi-clock text-5xl flex justify-center pt-2"></i>
+                    <i class="bi bi-clock text-5xl flex text-primary-300 justify-center pt-2"></i>
                     <h2 class="font-medium text-primary-300 text-xl text-center pt-3">Registrain <br
                         class="hidden xl:block"> Time</h2>
                     <h2 class="font-medium text-primary-300 text-2xl text-center pt-2">09:00 AM</h2>
@@ -360,7 +293,7 @@
                 <div class="bg-black frame-corner overflow-hidden w-full h-[82%]">
                   <div class="frame2 absolute inset-0 border border-primary-600"></div>
                   <div class="flex justify-center items-center flex-col h-full p-5 xl:p-0">
-                    <i class="bi bi-people-fill text-5xl flex justify-center pt-2"></i>
+                    <i class="bi bi-people-fill text-5xl text-primary-300 flex justify-center pt-2"></i>
                     <h2 class="font-medium text-primary-300 text-xl text-center pt-3">Total <br class="hidden xl:block">
                       Team</h2>
                     <h2 class="font-medium text-primary-300 text-2xl text-center pt-2">100</h2>
@@ -371,7 +304,7 @@
                 <div class="bg-black frame-corner overflow-hidden w-full h-[82%]">
                   <div class="frame2 absolute inset-0 border border-primary-600"></div>
                   <div class="flex justify-center items-center flex-col h-full p-5 xl:p-0">
-                    <i class="bi bi-person-fill-down text-5xl flex justify-center pt-2"></i>
+                    <i class="bi bi-person-fill-down text-primary-300 text-5xl flex justify-center pt-2"></i>
                     <h2 class="font-medium text-primary-300 text-xl text-center pt-3">Direct <br
                         class="hidden xl:block"> Team</h2>
                     <h2 class="font-medium text-primary-300 text-2xl text-center pt-2">70</h2>
@@ -381,32 +314,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="bg-black frame-corner overflow-hidden w-full">
-          <div class="frame-second absolute inset-0 border border-primary-600"></div>
-          <div
-            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
-            <h2 class="font-medium text-primary-300">Threats by Type</h2>
-          </div>
-          <div class="relative p-6">
-            <canvas id="threatsChart"></canvas>
-          </div>
-          <div x-data="backgroundChanger()" x-init="start()"
-            class="yujamnshjekwn grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mb-6">
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 1}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 2}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 3}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 4}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 5}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 6}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 7}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 8}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 9}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 10}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 11}"></div>
-            <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox > 12}"></div>
-          </div>
-        </div> -->
       </div>
 
       <div class="grid phaksrqnmchdb lg:xyajskeyhndma chsjuaielnsja">
@@ -503,109 +410,90 @@
       <div class="grid phaksrqnmchdb sm:vaysueikmnvhf lg:xyajskeyhndma chsjuaielnsja">
         <div class="bg-black frame-corner overflow-hidden w-full">
           <div class="frame-second absolute inset-0 border border-primary-600"></div>
-          <div
-            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
-            <h2 class="font-medium text-primary-300">Threats by Endpoint</h2>
-          </div>
-          <div class="relative p-6 flex jdsnfsdnjsdmn gap-3">
-            <div class="flex olwuyhsbcnmdj bnshkajshwjio">
-              <div class="flex olwuyhsbcnmdj">
-                <i class="bi bi-laptop text-primary-300 text-2xl"></i>
-                <span class="ms-3 text-lg font-medium">Laptops</span>
-              </div>
-              <span class="text-lg font-bold text-red-500">15</span>
+          <div class="flex bnshkajshwjio items-center p-6">
+            <div>
+              <i class="bi bi-bar-chart text-6xl text-primary-300"></i>
             </div>
-            <div class="flex olwuyhsbcnmdj bnshkajshwjio">
-              <div class="flex olwuyhsbcnmdj">
-                <i class="bi bi-phone text-primary-300 text-2xl"></i>
-                <span class="ms-3 text-lg font-medium">Mobile</span>
-              </div>
-              <span class="text-lg font-bold text-red-500">10</span>
-            </div>
-            <div class="flex olwuyhsbcnmdj bnshkajshwjio">
-              <div class="flex olwuyhsbcnmdj">
-                <i class="bi bi-tablet text-primary-300 text-2xl"></i>
-                <span class="ms-3 text-lg font-medium">Tablets</span>
-              </div>
-              <span class="text-lg font-bold text-red-500">8</span>
-            </div>
-            <div class="flex olwuyhsbcnmdj bnshkajshwjio">
-              <div class="flex olwuyhsbcnmdj">
-                <i class="bi bi-server text-primary-300 text-2xl"></i>
-                <span class="ms-3 text-lg font-medium">Servers</span>
-              </div>
-              <span class="text-lg font-bold text-red-500">5</span>
+            <div class="text-end">
+              <span class="font-medium text-red-600">Earning</span>
+              <h2 style="padding-top: 40px;" class="text-5xl pt-10 text-primary-300">$100k</h2>
             </div>
           </div>
         </div>
         <div class="bg-black frame-corner overflow-hidden w-full">
           <div class="frame-second absolute inset-0 border border-primary-600"></div>
-          <div
-            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
-            <h2 class="font-medium text-primary-300">Compliance Status</h2>
-          </div>
-          <div class="relative p-6">
+          <div class="flex bnshkajshwjio items-center p-6">
             <div>
-              <div class="relative flex qaksleiuryhnv olwuyhsbcnmdj" x-data="progressCircle(89, 5)"
-                x-intersect="startProgress()">
-                <svg width="100" height="100">
-                  <circle cx="50" cy="50" r="45" class="stroke-primary-950" stroke-width="10" fill="none"></circle>
-                  <circle cx="50" cy="50" r="45" class="stroke-primary-300" stroke-width="10" fill="none"
-                    :stroke-dasharray="283" :stroke-dashoffset="strokeDashoffset"></circle>
-                </svg>
-                <div class="absolute" x-text="percentage + '%'"></div>
-              </div>
+              <i class="bi bi-bar-chart text-6xl text-primary-300"></i>
             </div>
-            <div class="flex jdsnfsdnjsdmn">
-              <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
-                <span>Total Policies:</span>
-                <span class="font-semibold text-primary-300">120</span>
-              </div>
-              <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
-                <span>Policies Compliant:</span>
-                <span class="font-semibold text-primary-300">102</span>
-              </div>
-              <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
-                <span>Policies Non-Compliant:</span>
-                <span class="font-semibold text-primary-300">18</span>
-              </div>
+            <div class="text-end">
+              <span class="font-medium text-red-600">Earning</span>
+              <h2 style="padding-top: 40px;" class="text-5xl pt-10 text-primary-300">$100k</h2>
             </div>
           </div>
         </div>
-        <div class="sm:col-span-2 lg:col-span-1 bg-black frame-corner overflow-hidden w-full">
+        <div class="bg-black frame-corner overflow-hidden w-full">
           <div class="frame-second absolute inset-0 border border-primary-600"></div>
-          <div
-            class="relative flex olwuyhsbcnmdj bnshkajshwjio thsjkalsueijm py-3 yujamnshjekwn border-b border-primary-600">
-            <h2 class="font-medium text-primary-300">Monthly Threats</h2>
-          </div>
-          <div class="relative py-6 px-8">
-            <canvas id="monthlyThreatsChart"></canvas>
-          </div>
-          <div class="flex jdsnfsdnjsdmn yujamnshjekwn pb-6">
-            <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
-              <span>New Threats:</span>
-              <span class="font-semibold text-primary-300">5</span>
+          <div class="flex bnshkajshwjio items-center p-6">
+            <div>
+              <i class="bi bi-bar-chart text-6xl text-primary-300"></i>
             </div>
-            <div class="mb-2 flex olwuyhsbcnmdj bnshkajshwjio">
-              <span>Unresolved:</span>
-              <span class="font-semibold text-primary-300">12</span>
+            <div class="text-end">
+              <span class="font-medium text-red-600">Earning</span>
+              <h2 style="padding-top: 40px;" class="text-5xl text-primary-300">$100k</h2>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div class="flex bnshkajshwjio items-center p-6">
+            <div>
+              <i class="bi bi-graph-up-arrow text-6xl text-primary-300"></i>
+            </div>
+            <div class="text-end">
+              <span class="font-medium text-yellow-500">Profit</span>
+              <h2 style="padding-top: 40px;" class="text-5xl pt-10 text-primary-300">$100k</h2>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div class="flex bnshkajshwjio items-center p-6">
+            <div>
+              <i class="bi bi-graph-up-arrow text-6xl text-primary-300"></i>
+            </div>
+            <div class="text-end">
+              <span class="font-medium text-yellow-500">Profit</span>
+              <h2 style="padding-top: 40px;" class="text-5xl pt-10 text-primary-300">$100k</h2>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black frame-corner overflow-hidden w-full">
+          <div class="frame-second absolute inset-0 border border-primary-600"></div>
+          <div class="flex bnshkajshwjio items-center p-6">
+            <div>
+              <i class="bi bi-graph-up-arrow text-6xl text-primary-300"></i>
+            </div>
+            <div class="text-end">
+              <span class="font-medium text-yellow-500">Profit</span>
+              <h2 style="padding-top: 40px;" class="text-5xl text-primary-300">$100k</h2>
             </div>
           </div>
         </div>
       </div>
       <div x-data="backgroundStep()" x-init="start()" class="grid yeusjmvklsyei md:phaksrqnmchdb2 thsjkalsueijm mb-6">
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 1}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 2}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 3}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 4}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 5}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 6}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 7}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 8}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 9}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 10}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 11}"></div>
-        <div class="p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 12}"></div>
+        <div class="p-1 sm:p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 1}"></div>
+        <div class="p-1 sm:p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 2}"></div>
+        <div class="p-1 sm:p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 3}"></div>
+        <div class="p-1 sm:p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 4}"></div>
+        <div class="hidden sm:block p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 5}"></div>
+        <div class="hidden sm:block p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 6}"></div>
+        <div class="hidden sm:block p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 7}"></div>
+        <div class="hidden sm:block p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 8}"></div>
+        <div class="hidden sm:block p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 9}"></div>
+        <div class="hidden sm:block p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 10}"></div>
+        <div class="hidden sm:block p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 11}"></div>
+        <div class="hidden sm:block p-2 bg-primary-950" :class="{'!bg-primary-300': activeBox === 12}"></div>
       </div>
     </main>
   </div>
