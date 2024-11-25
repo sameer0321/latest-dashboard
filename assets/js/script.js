@@ -10,11 +10,11 @@ function counter(end, duration) {
 
     startCounting() {
       // formater
-      end = parseInt(end.toString().replace(/,/g, ''), 10); 
+      end = parseInt(end.toString().replace(/,/g, ''), 10);
 
       // prevent
       if (this.counting || this.current >= end) return;
-      
+
       this.counting = true;
 
       const start = this.current;
@@ -49,11 +49,11 @@ function progressCircle(end, duration) {
 
       this.isProgressing = true; // Set flag to true when progress starts
       const interval = (duration * 1000) / end;
-      
+
       let counter = setInterval(() => {
         this.percentage += 1;
         this.strokeDashoffset = 283 - (283 * this.percentage / 100);
-        
+
         if (this.percentage >= end) {
           clearInterval(counter); // Stop the progress when end is reached
           this.isProgressing = false; // Reset flag after completion
@@ -78,7 +78,7 @@ function musicPlayer() {
       { title: 'Sunset Serenade', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' },
       { title: 'Midnight Journey', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3' },
       { title: 'Ethereal Echoes', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3' }
-      ],
+    ],
     togglePlayPause() {
       if (this.isPlaying) {
         this.audio.pause();
