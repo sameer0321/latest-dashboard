@@ -220,6 +220,21 @@
               </label>
             </div>
           </div>
+          <div class="relative">
+            <label class="block mb-2 font-medium">Checkbox</label>
+            <div class="flex flex-wrap ghsnkalieksml">
+              <div class="relative">
+                <label class="inline-flex olwuyhsbcnmdj">
+                  <input type="checkbox" id="check1" class="hidden peer">
+                  <span
+                    class="inline-flex qaksleiuryhnv olwuyhsbcnmdj size-5 border border-primary-600 bg-primary-950 peer-checked:bg-primary-300 peer-focus:ring-0 peer-focus:outline-none">
+                    <i class="bi bi-check text-2xl leading-none text-primary-950"></i>
+                  </span>
+                  <span class="ms-2">Accept Terms & Conditions</span>
+                </label>
+              </div>
+            </div>
+          </div>
           <div class="relative mb-6">
             <label for="flatpickr" class="mb-2 block text-primary-300 font-medium">Select Date</label>
             <input type="text" id="flatpickr"
@@ -232,7 +247,7 @@
               class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
               placeholder="Enter Your Number">
           </div>
-          <p class="text-lg font-semibold">Upload</p>
+          <p class="text-lg font-semibold">Single upload</p>
           <div class="relative">
             <div id="imageSingle" class="dropzone border border-primary-600 bg-black single-dropzone mb-6">
               <div class="dz-message" data-dz-message>
@@ -248,19 +263,62 @@
               </div>
             </div>
           </div>
-          <div class="relative mb-6">
-            <label for="textarea" class="mb-2 block">Suggestions</label>
-            <textarea id="textarea" rows="4" required
-              class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
-              placeholder="What would you like to see ?"></textarea>
-          </div>
-          <div class="flex" style="justify-content: center;">
-            <button
-              class="frame-corner w-full xl:w-2/4 inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-600 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">Submit</button>
-          </div>
+        </div>
+
+        <div x-show="tabs === 2" class="py-4" style="display: none">
+          <pre>
+                            <code class="language-html" data-lang="html">
+          &lt;p class="text-lg font-semibold"&gt;Multiple upload&lt;/p&gt;
+          &lt;div class="relative"&gt;
+            &lt;div id="imageUpload" class="dropzone border border-primary-600 bg-black multiple-dropzone mb-6"&gt;
+              &lt;div class="dz-message" data-dz-message&gt;
+                &lt;div class="pre-upload flex jdsnfsdnjsdmn qaksleiuryhnv"&gt;
+                  &lt;i class="text-5xl bi bi-cloud-arrow-up"&gt;&lt;/i&gt;
+                  &lt;div class="pb-3"&gt;&lt;span&gt;Drag & drop images here&lt;/span&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="pre-upload text-center"&gt;
+                  &lt;button
+                    class="btn-fill frame-corner inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0"&gt;Browse
+                    file&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;span class="after-upload"&gt;+&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;p class="text-lg font-semibold"&gt;Single upload&lt;/p&gt;
+          &lt;div class="relative"&gt;
+            &lt;div id="imageSingle" class="dropzone border border-primary-600 bg-black single-dropzone mb-6"&gt;
+              &lt;div class="dz-message" data-dz-message&gt;
+                &lt;div class="pre-upload flex jdsnfsdnjsdmn qaksleiuryhnv"&gt;
+                  &lt;i class="text-5xl bi bi-cloud-arrow-up"&gt;&lt;/i&gt;
+                  &lt;div class="pb-3"&gt;&lt;span&gt;Drag & drop images here&lt;/span&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="pre-upload text-center"&gt;
+                  &lt;button
+                    class="btn-fill frame-corner inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0"&gt;Browse
+                    file&lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+                            </code>
+                          </pre>
         </div>
       </div>
-    </main>
+      <div class="relative mb-6">
+        <label for="textarea" class="mb-2 block">Suggestions</label>
+        <textarea id="textarea" rows="4" required
+          class="w-full uioajsncmhdje py-2 bg-primary-950 border border-primary-600 focus:shadow-sm focus:border-primary-300 focus:text-primary-300 placeholder-primary-800 focus:outline-none focus:ring-0"
+          placeholder="What would you like to see ?"></textarea>
+      </div>
+      <div class="flex" style="justify-content: center;">
+        <button
+          class="frame-corner w-full xl:w-2/4 inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv yujamnshjekwn py-2 uppercase font-medium border border-primary-600 text-primary-600 hover:border-primary-300 hover:text-black focus:text-black focus:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">Submit</button>
+      </div>
+  </div>
+  </div>
+  </main>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -271,6 +329,55 @@
         allowInput: true          // Allow manual typing
       });
     });
+  </script>
+
+
+  <script src="assets/vendors/dropzone/dropzone.min.js"></script>
+  <script>
+    // Dropzone uploader
+    const myUploader = function () {
+      // dropzone
+      const dropzone_class = document.querySelectorAll(".multiple-dropzone");
+
+      if (dropzone_class != null) {
+        for (let i = 0; i < dropzone_class.length; i++) {
+          const myDropzone = new Dropzone(dropzone_class[i], {
+            addRemoveLinks: true,
+            uploadMultiple: true,
+            parallelUploads: 100,
+            maxFiles: 5,
+            paramName: 'file',
+            clickable: true,
+            url: '#'
+          });
+          Dropzone.autoDiscover = false;
+        }
+      }
+
+      const dropzone_single = document.querySelectorAll(".single-dropzone");
+
+      if (dropzone_single != null) {
+        for (let i = 0; i < dropzone_single.length; i++) {
+          const myDropzone = new Dropzone(dropzone_single[i], {
+            addRemoveLinks: true,
+            uploadMultiple: false,
+            maxFiles: 1,
+            init: function () {
+              this.on('addedfile', function (file) {
+                if (this.files.length > 1) {
+                  this.removeFile(this.files[0]);
+                }
+              });
+            },
+            paramName: 'file',
+            clickable: true,
+            url: '#'
+          });
+          Dropzone.autoDiscover = false;
+        }
+      }
+    }
+    myUploader();
   </script>
   <script src="assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

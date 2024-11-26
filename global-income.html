@@ -13,19 +13,6 @@
     <link href="assets/css/output.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/customizer.css">
     <link rel="icon" href="assets/img/favicon.png">
-    <style>
-        /* For Chrome, Safari, Edge, and Opera */
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        /* For Firefox */
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
-    </style>
 </head>
 
 <body class="bg-black text-primary-600 font-sans pt-14 lg:pt-0" x-data="{ sidebar: false }">
@@ -169,7 +156,6 @@
                     </div>
                 </div>
             </div>
-            <!-- main content -->
             <div class="grid phaksrqnmchdb chsjuaielnsja">
                 <!-- Settings Card -->
                 <div class="w-full bg-black frame-corner overflow-hidden">
@@ -177,339 +163,416 @@
                     <div class="relative pt-6 pb-3">
                         <!-- table -->
                         <div class="relative table-sorter-inside w-full overflow-y-auto">
-                            <div
-                                class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
-                                <div class="datatable-top">
-                                    <div class="datatable-dropdown">
-                                        <label>
-                                            <select class="datatable-selector" name="per-page">
-                                                <option value="5">5</option>
-                                                <option value="10" selected="">10</option>
-                                                <option value="15">15</option>
-                                                <option value="20">20</option>
-                                                <option value="25">25</option>
-                                            </select> entries per page
-                                        </label>
-                                    </div>
-                                    <div class="datatable-search">
-                                        <input class="datatable-input" placeholder="Search..." type="search"
-                                            name="search" title="Search within table">
-                                    </div>
-                                </div>
-                                <div class="datatable-container">
-                                    <table
-                                        class="table-sorter table-default min-w-full divide-y divide-black border border-black datatable-table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" data-sortable="false"
-                                                    style="width: 20.417633410672853%;">NAME</th>
-                                                <th scope="col" data-sortable="true"
-                                                    style="width: 26.450116009280745%;"><button
-                                                        class="datatable-sorter">EMAIL</button></th>
-                                                <th scope="col" data-sortable="true"
-                                                    style="width: 14.385150812064964%;"><button
-                                                        class="datatable-sorter">REVENUE</button></th>
-                                                <th scope="col" data-sortable="true" style="width: 13.34106728538283%;">
-                                                    <button class="datatable-sorter">STATUS</button>
-                                                </th>
-                                                <th scope="col" data-sortable="true"
-                                                    style="width: 14.617169373549885%;"><button
-                                                        class="datatable-sorter">CITY</button></th>
-                                                <th scope="col" data-sortable="false"
-                                                    style="width: 10.788863109048725%;">ACTION</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr data-index="0">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/avatar2.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">John Doe</div>
-                                                            <div class="text-sm text-primary-800">Software Engineer
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>john.doe@example.com</td>
-                                                <td>$120,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
-                                                </td>
-                                                <td>New York</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="1">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/avatar3.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">James Smith</div>
-                                                            <div class="text-sm text-primary-800">Product Manager</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>james.smith@example.com</td>
-                                                <td>$110,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
-                                                </td>
-                                                <td>San Francisco</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="2">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/avatar4.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">Mike Johnson</div>
-                                                            <div class="text-sm text-primary-800">DevOps Engineer</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>mike.johnson@example.com</td>
-                                                <td>$115,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Inactive</span>
-                                                </td>
-                                                <td>Chicago</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="3">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/avatar5.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">Emily Davis</div>
-                                                            <div class="text-sm text-primary-800">UI/UX Designer</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>emily.davis@example.com</td>
-                                                <td>$100,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
-                                                </td>
-                                                <td>Los Angeles</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="4">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/avatar6.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">James Brown</div>
-                                                            <div class="text-sm text-primary-800">Backend Developer
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>james.brown@example.com</td>
-                                                <td>$125,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
-                                                </td>
-                                                <td>Houston</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="5">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/avatar7.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">Jeremy White</div>
-                                                            <div class="text-sm text-primary-800">Frontend Developer
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>jeremy.white@example.com</td>
-                                                <td>$110,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Inactive</span>
-                                                </td>
-                                                <td>Austin</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="6">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/avatar8.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">David Wilson</div>
-                                                            <div class="text-sm text-primary-800">Project Manager</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>david.wilson@example.com</td>
-                                                <td>$130,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
-                                                </td>
-                                                <td>Seattle</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="7">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/female1.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">Sarah Miller</div>
-                                                            <div class="text-sm text-primary-800">QA Engineer</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>sarah.miller@example.com</td>
-                                                <td>$95,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
-                                                </td>
-                                                <td>Denver</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="8">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/male1.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">Daniel Martinez
-                                                            </div>
-                                                            <div class="text-sm text-primary-800">Fullstack Developer
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>daniel.martinez@example.com</td>
-                                                <td>$120,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
-                                                </td>
-                                                <td>Dallas</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="9">
-                                                <td>
-                                                    <div class="flex olwuyhsbcnmdj gap-3">
-                                                        <img src="assets/img/avatar/female2.jpg" alt="Avatar"
-                                                            class="w-10 h-10 rounded-full">
-                                                        <div>
-                                                            <div class="font-medium text-primary-300">Sophia Taylor
-                                                            </div>
-                                                            <div class="text-sm text-primary-800">Marketing Specialist
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>sophia.taylor@example.com</td>
-                                                <td>$85,000</td>
-                                                <td>
-                                                    <span
-                                                        class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
-                                                </td>
-                                                <td>Phoenix</td>
-                                                <td>
-                                                    <button
-                                                        class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="datatable-bottom">
-                                    <div class="datatable-info">Showing 1 to 10 of 15 entries</div>
-                                    <nav class="datatable-pagination">
-                                        <ul class="datatable-pagination-list">
-                                            <li
-                                                class="datatable-pagination-list-item datatable-hidden datatable-disabled">
-                                                <button data-page="1" class="datatable-pagination-list-item-link"
-                                                    aria-label="Page 1">‹</button>
-                                            </li>
-                                            <li class="datatable-pagination-list-item datatable-active"><button
-                                                    data-page="1" class="datatable-pagination-list-item-link"
-                                                    aria-label="Page 1">1</button></li>
-                                            <li class="datatable-pagination-list-item"><button data-page="2"
-                                                    class="datatable-pagination-list-item-link"
-                                                    aria-label="Page 2">2</button></li>
-                                            <li class="datatable-pagination-list-item"><button data-page="2"
-                                                    class="datatable-pagination-list-item-link"
-                                                    aria-label="Page 2">›</button></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
+                            <table id="data_table"
+                                class="table-sorter table-default min-w-full divide-y divide-black border border-black">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" data-sortable="false">
+                                            Name
+                                        </th>
+                                        <th scope="col">
+                                            Email
+                                        </th>
+                                        <th scope="col">
+                                            Revenue
+                                        </th>
+                                        <th scope="col">
+                                            Status
+                                        </th>
+                                        <th scope="col">
+                                            City
+                                        </th>
+                                        <th scope="col" data-sortable="false">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/avatar2.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">John Doe</div>
+                                                    <div class="text-sm text-primary-800">Software Engineer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>john.doe@example.com</td>
+                                        <td>$120,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>New York</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/avatar3.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">James Smith</div>
+                                                    <div class="text-sm text-primary-800">Product Manager</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>james.smith@example.com</td>
+                                        <td>$110,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>San Francisco</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/avatar4.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Mike Johnson</div>
+                                                    <div class="text-sm text-primary-800">DevOps Engineer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>mike.johnson@example.com</td>
+                                        <td>$115,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Inactive</span>
+                                        </td>
+                                        <td>Chicago</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/avatar5.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Emily Davis</div>
+                                                    <div class="text-sm text-primary-800">UI/UX Designer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>emily.davis@example.com</td>
+                                        <td>$100,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Los Angeles</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/avatar6.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">James Brown</div>
+                                                    <div class="text-sm text-primary-800">Backend Developer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>james.brown@example.com</td>
+                                        <td>$125,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Houston</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/avatar7.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Jeremy White</div>
+                                                    <div class="text-sm text-primary-800">Frontend Developer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>jeremy.white@example.com</td>
+                                        <td>$110,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Inactive</span>
+                                        </td>
+                                        <td>Austin</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/avatar7.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">David Wilson</div>
+                                                    <div class="text-sm text-primary-800">Project Manager</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>david.wilson@example.com</td>
+                                        <td>$130,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Seattle</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/female1.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Sarah Miller</div>
+                                                    <div class="text-sm text-primary-800">QA Engineer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>sarah.miller@example.com</td>
+                                        <td>$95,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Denver</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/male1.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Daniel Martinez</div>
+                                                    <div class="text-sm text-primary-800">Fullstack Developer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>daniel.martinez@example.com</td>
+                                        <td>$120,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Dallas</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/female2.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Sophia Taylor</div>
+                                                    <div class="text-sm text-primary-800">Marketing Specialist</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>sophia.taylor@example.com</td>
+                                        <td>$85,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Phoenix</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/male3.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Chris Anderson</div>
+                                                    <div class="text-sm text-primary-800">Data Scientist</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>chris.anderson@example.com</td>
+                                        <td>$140,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Inactive</span>
+                                        </td>
+                                        <td>Miami</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/female3.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Olivia Harris</div>
+                                                    <div class="text-sm text-primary-800">HR Manager</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>olivia.harris@example.com</td>
+                                        <td>$95,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Boston</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium           bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/male4.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Michael Scott</div>
+                                                    <div class="text-sm text-primary-800">Operations Manager</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>michael.scott@example.com</td>
+                                        <td>$115,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Chicago</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/female6.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Emma Thompson</div>
+                                                    <div class="text-sm text-primary-800">UX/UI Designer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>emma.thompson@example.com</td>
+                                        <td>$105,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>Los Angeles</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="flex olwuyhsbcnmdj gap-3">
+                                                <img src="assets/img/avatar/male6.jpg" alt="Avatar"
+                                                    class="w-10 h-10 rounded-full">
+                                                <div>
+                                                    <div class="font-medium text-primary-300">Ethan Lewis</div>
+                                                    <div class="text-sm text-primary-800">DevOps Engineer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>ethan.lewis@example.com</td>
+                                        <td>$130,000</td>
+                                        <td>
+                                            <span
+                                                class="inline-flex olwuyhsbcnmdj gap-x-1.5 py-1.5 px-3 rounded-sm text-xs font-medium border border-primary-600 bg-black text-primary-300">Active</span>
+                                        </td>
+                                        <td>San Francisco</td>
+                                        <td>
+                                            <button
+                                                class="inline-flex olwuyhsbcnmdj thsjkalsueijm qaksleiuryhnv size-10 rounded-full uppercase font-medium bg-primary-400 border border-primary-400 text-black hover:bg-primary-300 focus:bg-primary-300 focus:outline-none focus:ring-0">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/umd/simple-datatables.min.js"></script>
+
+    <script src="assets/vendors/simple-datatables/simple-datatables.min.js"></script>
     <script>
         // Tables sorter
         const myTablesorter = function () {
@@ -521,7 +584,6 @@
             };
         }
         myTablesorter();
-
     </script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/customizer.js"></script>
